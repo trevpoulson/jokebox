@@ -1,0 +1,15 @@
+[Unit]
+Description=Joke Box GPIO listener (coin acceptor + PIR motion sensor)
+After=jokebox-server.service
+Requires=jokebox-server.service
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/jokebox/software
+ExecStart=/home/pi/jokebox/software/venv/bin/python gpio_listener.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

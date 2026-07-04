@@ -1,0 +1,402 @@
+{
+  "dad": {
+    "label": "Dad Jokes",
+    "jokes": [
+      {
+        "setup": "I'm reading a book about anti-gravity.",
+        "punchline": "It's impossible to put down."
+      },
+      {
+        "setup": "I used to be a banker...",
+        "punchline": "but I lost interest."
+      },
+      {
+        "setup": "Why don't skeletons fight each other?",
+        "punchline": "They don't have the guts."
+      },
+      {
+        "setup": "I only know 25 letters of the alphabet.",
+        "punchline": "I don't know y."
+      },
+      {
+        "setup": "What do you call a fish with no eyes?",
+        "punchline": "A fsh."
+      },
+      {
+        "setup": "I told my wife she was drawing her eyebrows too high.",
+        "punchline": "She looked surprised."
+      },
+      {
+        "setup": "What do you call a factory that makes okay products?",
+        "punchline": "A satisfactory."
+      },
+      {
+        "setup": "I used to hate facial hair.",
+        "punchline": "But then it grew on me."
+      },
+      {
+        "setup": "Have you heard about the claustrophobic astronaut?",
+        "punchline": "He just needed a little space."
+      },
+      {
+        "setup": "Why don't eggs tell jokes?",
+        "punchline": "They'd crack each other up."
+      },
+      {
+        "setup": "What do you call a can opener that doesn't work?",
+        "punchline": "A can't opener."
+      },
+      {
+        "setup": "I would tell you a chemistry joke.",
+        "punchline": "But I know I wouldn't get a reaction."
+      },
+      {
+        "setup": "What did the ocean say to the beach?",
+        "punchline": "Nothing, it just waved."
+      },
+      {
+        "setup": "I invented a new word today.",
+        "punchline": "Plagiarism."
+      },
+      {
+        "setup": "Why did the golfer bring two pairs of pants?",
+        "punchline": "In case he got a hole in one."
+      },
+      {
+        "setup": "What do you call a dinosaur that crashes his car?",
+        "punchline": "A Tyrannosaurus wrecks."
+      },
+      {
+        "setup": "I'm reading a horror story in braille.",
+        "punchline": "Something bad is about to happen, I can feel it."
+      },
+      {
+        "setup": "What did the duck say to the waiter when he brought the check?",
+        "punchline": "Put it on my bill."
+      },
+      {
+        "setup": "What's the difference between a piano and a fish?",
+        "punchline": "You can tune a piano, but you can't tuna fish."
+      },
+      {
+        "setup": "Did you hear about the cheese factory that exploded in France?",
+        "punchline": "Da brie is everywhere."
+      },
+      {
+        "setup": "Everyone knows Murphy's Law. Do you know Cole's Law?",
+        "punchline": "It's thinly sliced cabbage."
+      },
+      {
+        "setup": "Do mascara and lipstick ever argue?",
+        "punchline": "Sure, but then they make up."
+      },
+      {
+        "setup": "Why did police arrest the turkey?",
+        "punchline": "They suspected fowl play."
+      },
+      {
+        "setup": "My kid said, \"I'll call you later.\"",
+        "punchline": "Please, call me Dad."
+      },
+      {
+        "setup": "My kid demanded, \"Make me a sandwich!\"",
+        "punchline": "Poof! You're a sandwich."
+      }
+    ]
+  },
+  "family": {
+    "label": "Family Friendly",
+    "jokes": [
+      {
+        "setup": "Why did the scarecrow win an award?",
+        "punchline": "Because he was outstanding in his field."
+      },
+      {
+        "setup": "What do you call a bear with no teeth?",
+        "punchline": "A gummy bear."
+      },
+      {
+        "setup": "Why can't your nose be twelve inches long?",
+        "punchline": "Because then it would be a foot."
+      },
+      {
+        "setup": "What did one wall say to the other wall?",
+        "punchline": "I'll meet you at the corner."
+      },
+      {
+        "setup": "Why did the bicycle fall over?",
+        "punchline": "Because it was two-tired."
+      },
+      {
+        "setup": "What do you call cheese that isn't yours?",
+        "punchline": "Nacho cheese."
+      },
+      {
+        "setup": "Why can't you give Elsa a balloon?",
+        "punchline": "Because she'll let it go."
+      },
+      {
+        "setup": "Why did the cookie go to the nurse?",
+        "punchline": "Because he felt crummy."
+      },
+      {
+        "setup": "What do you call a fish wearing a bowtie?",
+        "punchline": "So-fish-ticated."
+      },
+      {
+        "setup": "Why did the picture go to jail?",
+        "punchline": "It was framed."
+      },
+      {
+        "setup": "Why don't oysters share?",
+        "punchline": "Because they're shellfish."
+      },
+      {
+        "setup": "What do you call a boomerang that won't come back?",
+        "punchline": "A stick."
+      },
+      {
+        "setup": "What do you call a group of musical whales?",
+        "punchline": "An orca-stra."
+      },
+      {
+        "setup": "What do you call a cow with no legs?",
+        "punchline": "Ground beef."
+      },
+      {
+        "setup": "What do you call a pig that knows karate?",
+        "punchline": "A pork chop."
+      },
+      {
+        "setup": "Where do cows go for entertainment?",
+        "punchline": "The moo-vies."
+      },
+      {
+        "setup": "What do you call an alligator in a vest?",
+        "punchline": "An investigator."
+      },
+      {
+        "setup": "Why do sharks swim in saltwater?",
+        "punchline": "Because pepper water makes them sneeze."
+      },
+      {
+        "setup": "What do you call a dog that can tell time?",
+        "punchline": "A watch dog."
+      },
+      {
+        "setup": "Why are elephants so wrinkled?",
+        "punchline": "Because they take too long to iron."
+      },
+      {
+        "setup": "What do you call a dinosaur in a cowboy hat?",
+        "punchline": "Tyrannosaurus Tex."
+      },
+      {
+        "setup": "Why should you never trust a pig with a secret?",
+        "punchline": "Because it's bound to squeal."
+      },
+      {
+        "setup": "Why did the science teacher tell her students not to trust an atom?",
+        "punchline": "Because they make up everything."
+      },
+      {
+        "setup": "What did the zero say to the eight?",
+        "punchline": "Nice belt."
+      },
+      {
+        "setup": "What do you call a happy cowboy?",
+        "punchline": "A jolly rancher."
+      }
+    ]
+  },
+  "dirty": {
+    "label": "Adults Only",
+    "jokes": [
+      {
+        "setup": "Why don't secrets last long at a nudist colony?",
+        "punchline": "Because everyone can see right through them."
+      },
+      {
+        "setup": "What did the bra say to the hat?",
+        "punchline": "You go on ahead, I'll give these two a lift."
+      },
+      {
+        "setup": "A guy asks a girl if she wants to hear a dirty joke.",
+        "punchline": "She says sure, so he says: a white horse fell in the mud."
+      },
+      {
+        "setup": "What's the difference between a G-spot and a golf ball?",
+        "punchline": "A guy will actually look for a golf ball."
+      },
+      {
+        "setup": "Why do men name their genitals?",
+        "punchline": "Because they don't want a stranger making 90% of their decisions."
+      },
+      {
+        "setup": "Two men broke into a drugstore and stole all the Viagra.",
+        "punchline": "Police are looking for two hardened criminals."
+      },
+      {
+        "setup": "My wife asked if I wanted to spoon in bed.",
+        "punchline": "I said I'd rather fork."
+      },
+      {
+        "setup": "A woman walks into a bar and asks for a double entendre.",
+        "punchline": "So he gave it to her."
+      },
+      {
+        "setup": "What's the difference between an oral thermometer and a rectal one?",
+        "punchline": "The taste."
+      },
+      {
+        "setup": "What goes in hard and dry, and comes out wet and soft?",
+        "punchline": "Chewing gum."
+      },
+      {
+        "setup": "What's long, hard, and full of seamen?",
+        "punchline": "A submarine."
+      },
+      {
+        "setup": "What do you call an expert fisherman?",
+        "punchline": "A master baiter."
+      },
+      {
+        "setup": "Two sperm are swimming along. One asks, \"How far to the fallopian tubes?\"",
+        "punchline": "The other says, \"We just passed the esophagus.\""
+      },
+      {
+        "setup": "What's the difference between a tire and 365 used condoms?",
+        "punchline": "One's a Goodyear, the other's a great year."
+      },
+      {
+        "setup": "Why isn't there a pregnant Barbie doll?",
+        "punchline": "Because Ken came in a different box."
+      },
+      {
+        "setup": "What do you call two jalape\u00f1os getting it on?",
+        "punchline": "Extremely hot."
+      },
+      {
+        "setup": "I'll admit it, I have a tremendous sex drive.",
+        "punchline": "My girlfriend lives forty miles away."
+      },
+      {
+        "setup": "What's the best help for a constipated person?",
+        "punchline": "Scare the shit out of them."
+      },
+      {
+        "setup": "What did the penis say to the condom?",
+        "punchline": "Cover me, I'm going in."
+      },
+      {
+        "setup": "What did the toaster say to the slice of bread?",
+        "punchline": "I want you inside me."
+      },
+      {
+        "setup": "What comes after 69?",
+        "punchline": "Mouthwash."
+      },
+      {
+        "setup": "How is sex like math?",
+        "punchline": "Add the bed, subtract the clothes, divide the legs, and pray you don't multiply."
+      },
+      {
+        "setup": "Baby, is it in yet? Not yet. Does it hurt? A little.",
+        "punchline": "Okay, let's try the other shoe."
+      },
+      {
+        "setup": "What's the difference between a boyfriend and a husband?",
+        "punchline": "About twenty minutes."
+      },
+      {
+        "setup": "They say marriage is a relationship where one person is always right.",
+        "punchline": "And the other person is the husband."
+      }
+    ]
+  },
+  "mixed": {
+    "label": "Mixed Nuts",
+    "jokes": [
+      {
+        "setup": "I'm reading a book about anti-gravity.",
+        "punchline": "It's impossible to put down."
+      },
+      {
+        "setup": "Why did the scarecrow win an award?",
+        "punchline": "Because he was outstanding in his field."
+      },
+      {
+        "setup": "Why don't secrets last long at a nudist colony?",
+        "punchline": "Because everyone can see right through them."
+      },
+      {
+        "setup": "Why don't skeletons fight each other?",
+        "punchline": "They don't have the guts."
+      },
+      {
+        "setup": "What do you call a bear with no teeth?",
+        "punchline": "A gummy bear."
+      },
+      {
+        "setup": "What's the difference between a G-spot and a golf ball?",
+        "punchline": "A guy will actually look for a golf ball."
+      },
+      {
+        "setup": "What do you call a factory that makes okay products?",
+        "punchline": "A satisfactory."
+      },
+      {
+        "setup": "What do you call cheese that isn't yours?",
+        "punchline": "Nacho cheese."
+      },
+      {
+        "setup": "A woman walks into a bar and asks for a double entendre.",
+        "punchline": "So he gave it to her."
+      },
+      {
+        "setup": "I would tell you a chemistry joke.",
+        "punchline": "But I know I wouldn't get a reaction."
+      },
+      {
+        "setup": "Why did the picture go to jail?",
+        "punchline": "It was framed."
+      },
+      {
+        "setup": "What do you call an expert fisherman?",
+        "punchline": "A master baiter."
+      },
+      {
+        "setup": "I invented a new word today.",
+        "punchline": "Plagiarism."
+      },
+      {
+        "setup": "What do you call a group of musical whales?",
+        "punchline": "An orca-stra."
+      },
+      {
+        "setup": "I'll admit it, I have a tremendous sex drive.",
+        "punchline": "My girlfriend lives forty miles away."
+      },
+      {
+        "setup": "What did the duck say to the waiter when he brought the check?",
+        "punchline": "Put it on my bill."
+      },
+      {
+        "setup": "What do you call a dog that can tell time?",
+        "punchline": "A watch dog."
+      },
+      {
+        "setup": "What's the difference between a boyfriend and a husband?",
+        "punchline": "About twenty minutes."
+      },
+      {
+        "setup": "My kid said, \"I'll call you later.\"",
+        "punchline": "Please, call me Dad."
+      },
+      {
+        "setup": "What do you call a happy cowboy?",
+        "punchline": "A jolly rancher."
+      }
+    ]
+  }
+}

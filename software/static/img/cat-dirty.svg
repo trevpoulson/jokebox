@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200">
+  <!-- Placeholder vintage vignette: martini, lipstick kiss, hearts.
+       Replace by dropping cat-dirty.png in this folder (PNG wins automatically). -->
+  <defs>
+    <pattern id="dots-dirty" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.5" fill="#2B1B10" opacity="0.17"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="200" fill="#B5432E"/>
+  <rect width="600" height="200" fill="url(#dots-dirty)"/>
+  <!-- spotlight -->
+  <circle cx="280" cy="100" r="88" fill="#F4E6C0" opacity="0.22"/>
+  <!-- martini glass -->
+  <g stroke="#2B1B10" stroke-width="5">
+    <polygon points="216,42 344,42 280,112" fill="#F4E6C0"/>
+    <line x1="280" y1="112" x2="280" y2="162"/>
+    <path d="M246 162 q34 -13 68 0" fill="#F4E6C0"/>
+  </g>
+  <!-- liquid line -->
+  <path d="M232 60 h96" stroke="#2B1B10" stroke-width="3" opacity="0.45"/>
+  <!-- olive on a pick -->
+  <line x1="304" y1="34" x2="272" y2="80" stroke="#2B1B10" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="278" cy="72" r="11" fill="#78893B" stroke="#2B1B10" stroke-width="4"/>
+  <circle cx="281" cy="69" r="3.5" fill="#B5432E"/>
+  <!-- lipstick kiss -->
+  <g transform="translate(420,88) rotate(-10)">
+    <path d="M0 0 q12 -19 29 -9 q5 4 9 0 q4 -4 9 0 q17 -10 29 9 q-19 9 -38 9 q-19 0 -38 -9 Z" fill="#2B1B10"/>
+    <path d="M4 7 q34 22 68 0 q-15 20 -34 20 q-19 0 -34 -20 Z" fill="#2B1B10"/>
+  </g>
+  <!-- winking eye above the kiss -->
+  <path d="M448 44 q14 10 28 0" fill="none" stroke="#2B1B10" stroke-width="5" stroke-linecap="round"/>
+  <path d="M446 36 q16 -8 32 0" fill="none" stroke="#2B1B10" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+  <!-- hearts -->
+  <path d="M108 62 c -7 -12 -26 -7 -22 7 c 2 10 22 20 22 20 c 0 0 20 -10 22 -20 c 4 -14 -15 -19 -22 -7 Z" fill="#F4E6C0" opacity="0.85"/>
+  <path d="M132 140 c -5 -9 -19 -5 -16 5 c 1.5 7 16 14 16 14 c 0 0 14 -7 16 -14 c 3 -10 -11 -14 -16 -5 Z" fill="#F4E6C0" opacity="0.6"/>
+  <path d="M528 150 c -5 -9 -19 -5 -16 5 c 1.5 7 16 14 16 14 c 0 0 14 -7 16 -14 c 3 -10 -11 -14 -16 -5 Z" fill="#F4E6C0" opacity="0.7"/>
+  <!-- bubbles -->
+  <circle cx="376" cy="150" r="7" fill="#F4E6C0" opacity="0.65"/>
+  <circle cx="394" cy="132" r="4.5" fill="#F4E6C0" opacity="0.55"/>
+</svg>

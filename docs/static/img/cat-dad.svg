@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200">
+  <!-- Placeholder vintage vignette: mustachioed dad with pipe.
+       Replace by dropping cat-dad.png in this folder (PNG wins automatically). -->
+  <defs>
+    <pattern id="dots-dad" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.5" fill="#2B1B10" opacity="0.15"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="200" fill="#D9A036"/>
+  <!-- sunburst -->
+  <g fill="#F4E6C0" opacity="0.5">
+    <polygon points="300,100 250,0 350,0"/>
+    <polygon points="300,100 480,0 560,30"/>
+    <polygon points="300,100 40,0 120,0"/>
+    <polygon points="300,100 600,70 600,130"/>
+    <polygon points="300,100 0,70 0,130"/>
+    <polygon points="300,100 480,200 560,170"/>
+    <polygon points="300,100 40,200 120,170"/>
+  </g>
+  <rect width="600" height="200" fill="url(#dots-dad)"/>
+  <!-- head -->
+  <circle cx="300" cy="102" r="72" fill="#F4E6C0" stroke="#2B1B10" stroke-width="5"/>
+  <!-- comb-over hair -->
+  <path d="M240 70 q20 -34 60 -38 q44 -4 66 26 q-30 -12 -62 -8 q-40 5 -64 20 Z" fill="#2B1B10"/>
+  <!-- brows -->
+  <path d="M258 78 q17 -13 34 -3" fill="none" stroke="#2B1B10" stroke-width="7" stroke-linecap="round"/>
+  <path d="M310 74 q17 -9 34 4" fill="none" stroke="#2B1B10" stroke-width="7" stroke-linecap="round"/>
+  <!-- eyes: one open, one winking -->
+  <circle cx="276" cy="94" r="5.5" fill="#2B1B10"/>
+  <path d="M316 94 q11 7 22 0" fill="none" stroke="#2B1B10" stroke-width="5" stroke-linecap="round"/>
+  <!-- rosy cheek -->
+  <circle cx="252" cy="116" r="8" fill="#B5432E" opacity="0.45"/>
+  <!-- nose -->
+  <path d="M298 96 q12 18 -3 26" fill="none" stroke="#2B1B10" stroke-width="5" stroke-linecap="round"/>
+  <!-- mustache -->
+  <path d="M300 130 q-13 -11 -34 -5 q-18 6 -24 20 q21 8 39 2 q13 -5 19 -17 Z" fill="#2B1B10"/>
+  <path d="M300 130 q13 -11 34 -5 q18 6 24 20 q-21 8 -39 2 q-13 -5 -19 -17 Z" fill="#2B1B10"/>
+  <!-- pipe -->
+  <path d="M326 152 q34 13 64 5" fill="none" stroke="#2B1B10" stroke-width="7" stroke-linecap="round"/>
+  <rect x="382" y="140" width="26" height="30" rx="7" fill="#B5432E" stroke="#2B1B10" stroke-width="5"/>
+  <!-- smoke -->
+  <path d="M395 128 q-9 -10 2 -19 q11 -9 2 -19" fill="none" stroke="#2B1B10" stroke-width="4" stroke-linecap="round" opacity="0.65"/>
+  <circle cx="402" cy="78" r="4" fill="#2B1B10" opacity="0.4"/>
+  <!-- "ha ha" marks -->
+  <path d="M170 60 l-14 -14 M176 44 l-4 -20 M154 74 l-20 -6" stroke="#2B1B10" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+  <path d="M430 60 l14 -14 M424 44 l4 -20 M446 74 l20 -6" stroke="#2B1B10" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+</svg>

@@ -1,0 +1,8 @@
+software/venv/
+__pycache__/
+*.pyc
+.DS_Store
+# live usage data — real machine state, not project content
+software/ratings.json
+software/stats.json
+software/settings.json

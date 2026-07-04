@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Joke Box — Back Office</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+@font-face { font-family: 'Alfa Slab One'; src: url('/static/fonts/alfa-slab-one.woff2') format('woff2'); }
+@font-face { font-family: 'Rye'; src: url('/static/fonts/rye.woff2') format('woff2'); }
+@font-face { font-family: 'Special Elite'; src: url('/static/fonts/special-elite.woff2') format('woff2'); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Special Elite', monospace;
+  color: #2B1B10;
+  background:
+    radial-gradient(ellipse at 18% 25%, rgba(122,78,30,0.14), transparent 42%),
+    radial-gradient(ellipse at 82% 75%, rgba(122,78,30,0.12), transparent 45%),
+    #EBD9AC;
+  padding: 30px 24px 60px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+h1 {
+  font-family: 'Alfa Slab One', serif;
+  color: #B5432E;
+  text-shadow: 2px 2px 0 #F4E6C0, 4px 4px 0 #2B1B10;
+  font-size: 42px;
+  margin-bottom: 4px;
+}
+.sub { font-family: 'Rye', serif; letter-spacing: 3px; font-size: 14px; margin-bottom: 26px; }
+.cards { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 26px; }
+.card {
+  background: #F4E6C0;
+  border: 3px solid #2B1B10;
+  box-shadow: 4px 4px 0 rgba(43,27,16,0.5);
+  padding: 12px 20px;
+  min-width: 150px;
+}
+.card .num { font-family: 'Alfa Slab One', serif; font-size: 30px; color: #B5432E; }
+.card .lbl { font-family: 'Rye', serif; font-size: 12px; letter-spacing: 1px; }
+h2 { font-family: 'Rye', serif; font-size: 20px; margin: 26px 0 10px; }
+table { width: 100%; border-collapse: collapse; background: #F4E6C0; border: 3px solid #2B1B10; box-shadow: 4px 4px 0 rgba(43,27,16,0.5); }
+th, td { padding: 7px 10px; border-bottom: 1px solid rgba(43,27,16,0.25); font-size: 14px; text-align: left; }
+th { font-family: 'Rye', serif; font-size: 12px; letter-spacing: 1px; background: #2B1B10; color: #F4E6C0; }
+td.num, th.num { text-align: right; }
+tr:last-child td { border-bottom: none; }
+.score-good { color: #78893B; font-weight: bold; }
+.score-bad { color: #B5432E; font-weight: bold; }
+form.settings { background: #F4E6C0; border: 3px solid #2B1B10; box-shadow: 4px 4px 0 rgba(43,27,16,0.5); padding: 16px 20px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+form.settings label { font-family: 'Rye', serif; font-size: 14px; }
+form.settings input[type=range] { width: 180px; vertical-align: middle; }
+form.settings button {
+  font-family: 'Rye', serif; font-size: 14px;
+  background: #B5432E; color: #F4E6C0; border: 3px solid #2B1B10;
+  padding: 8px 18px; cursor: pointer; box-shadow: 3px 3px 0 rgba(43,27,16,0.5);
+}
+.note { font-size: 12px; opacity: 0.65; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<h1>JOKE BOX</h1>
+<div class="sub">★ BACK OFFICE — MANAGEMENT ONLY ★</div>
+
+<div class="cards">
+  <div class="card"><div class="num">{{ coins }}</div><div class="lbl">Quarters In</div></div>
+  <div class="card"><div class="num">${{ earnings }}</div><div class="lbl">Total Earned</div></div>
+  {% for cat_id, label in labels.items() %}
+  <div class="card"><div class="num">{{ sessions.get(cat_id, 0) }}</div><div class="lbl">{{ label }} Sessions</div></div>
+  {% endfor %}
+</div>
+
+<h2>House Settings</h2>
+<form class="settings" method="POST" action="/admin/settings">
+  <label>Volume
+    <input type="range" name="volume" min="0" max="1" step="0.05" value="{{ settings.volume }}"
+           oninput="this.nextElementSibling.textContent = Math.round(this.value*100)+'%'">
+    <span>{{ (settings.volume * 100) | round | int }}%</span>
+  </label>
+  <label>
+    <input type="checkbox" name="free_play" {% if settings.free_play %}checked{% endif %}>
+    Free play (no quarter needed)
+  </label>
+  <button type="submit">Save</button>
+</form>
+<div class="note">Changes take effect the next time the kiosk starts a session (volume) or reloads (free play).</div>
+
+<h2>The Lineup — what's in rotation</h2>
+<form method="POST" action="/admin/content">
+  <div class="cards" style="margin-bottom:14px;">
+    {% for cat_id, label in labels.items() %}
+    <label class="card" style="cursor:pointer;">
+      <input type="checkbox" name="cat" value="{{ cat_id }}" {% if enabled_cats[cat_id] %}checked{% endif %}>
+      <span class="lbl" style="font-family:'Rye',serif;">{{ label }}</span>
+    </label>
+    {% endfor %}
+  </div>
+  <div class="note" style="margin-bottom:14px;">Unchecking a category hides it from the menu entirely. Unchecking a single joke pulls it from rotation without touching its stats.</div>
+  <table>
+    <tr>
+      <th>On</th><th>Category</th><th>Joke</th>
+      <th class="num">Plays</th><th class="num">Meh</th><th class="num">Smirk</th><th class="num">Hilarious</th><th class="num">Score</th>
+    </tr>
+    {% for r in rows %}
+    <tr {% if not r.enabled %}style="opacity:0.45;"{% endif %}>
+      <td><input type="checkbox" name="joke" value="{{ r.key }}" {% if r.enabled %}checked{% endif %}></td>
+      <td>{{ r.category }}</td>
+      <td>{{ r.setup[:60] }}{% if r.setup|length > 60 %}…{% endif %}</td>
+      <td class="num">{{ r.plays }}</td>
+      <td class="num">{{ r.meh }}</td>
+      <td class="num">{{ r.smirk }}</td>
+      <td class="num">{{ r.laugh }}</td>
+      <td class="num {% if r.score is not none and r.score >= 0.5 %}score-good{% elif r.score is not none and r.score < 0 %}score-bad{% endif %}">
+        {{ r.score if r.score is not none else "—" }}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <button type="submit" style="font-family:'Rye',serif;font-size:15px;background:#B5432E;color:#F4E6C0;border:3px solid #2B1B10;padding:10px 24px;cursor:pointer;box-shadow:3px 3px 0 rgba(43,27,16,0.5);margin-top:14px;">Save Lineup</button>
+</form>
+<div class="note">Score = (2×hilarious + smirk − 1.5×meh) ÷ total votes. Jokes need 3+ votes before the score changes how often they're picked.</div>
+
+</body>
+</html>

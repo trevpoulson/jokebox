@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200">
+  <!-- Placeholder vintage vignette: peanut comedian at a microphone.
+       Replace by dropping cat-mixed.png in this folder (PNG wins automatically). -->
+  <defs>
+    <pattern id="dots-mix" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.5" fill="#2B1B10" opacity="0.15"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="200" fill="#D96C2E"/>
+  <rect width="600" height="200" fill="url(#dots-mix)"/>
+  <!-- spotlight cone -->
+  <polygon points="300,-10 190,200 410,200" fill="#F4E6C0" opacity="0.22"/>
+  <!-- question marks -->
+  <text x="96" y="90" font-family="Georgia, serif" font-size="56" font-weight="bold" fill="#F4E6C0" opacity="0.6" transform="rotate(-12 96 90)">?</text>
+  <text x="472" y="160" font-family="Georgia, serif" font-size="48" font-weight="bold" fill="#F4E6C0" opacity="0.6" transform="rotate(14 472 160)">?</text>
+  <text x="490" y="66" font-family="Georgia, serif" font-size="36" font-weight="bold" fill="#2B1B10" opacity="0.35" transform="rotate(8 490 66)">?</text>
+  <!-- peanut body -->
+  <path d="M300 22
+           c 27 0 41 19 37 37 c -3 13 -13 19 -13 30
+           c 0 11 11 19 13 33 c 3 23 -14 38 -37 38
+           c -23 0 -40 -15 -37 -38 c 2 -14 13 -22 13 -33
+           c 0 -11 -10 -17 -13 -30 c -4 -18 10 -37 37 -37 Z"
+        fill="#F4E6C0" stroke="#2B1B10" stroke-width="5"/>
+  <!-- shell crosshatch -->
+  <g stroke="#2B1B10" stroke-width="2.5" opacity="0.35">
+    <path d="M275 46 q25 10 50 0" fill="none"/>
+    <path d="M272 68 q28 10 56 0" fill="none"/>
+    <path d="M276 138 q24 10 48 0" fill="none"/>
+    <path d="M280 152 q20 8 40 0" fill="none"/>
+  </g>
+  <!-- face -->
+  <circle cx="287" cy="56" r="5.5" fill="#2B1B10"/>
+  <circle cx="313" cy="56" r="5.5" fill="#2B1B10"/>
+  <path d="M282 74 q18 16 36 0" fill="none" stroke="#2B1B10" stroke-width="5" stroke-linecap="round"/>
+  <!-- bowtie -->
+  <g transform="translate(300,102)">
+    <polygon points="-26,-11 0,0 -26,11" fill="#B5432E" stroke="#2B1B10" stroke-width="4"/>
+    <polygon points="26,-11 0,0 26,11" fill="#B5432E" stroke="#2B1B10" stroke-width="4"/>
+    <circle cx="0" cy="0" r="5.5" fill="#2B1B10"/>
+  </g>
+  <!-- arm holding the mic -->
+  <path d="M336 118 q28 -4 42 -18" fill="none" stroke="#2B1B10" stroke-width="5" stroke-linecap="round"/>
+  <!-- vintage stand mic -->
+  <line x1="392" y1="96" x2="392" y2="176" stroke="#2B1B10" stroke-width="5" stroke-linecap="round"/>
+  <path d="M368 176 h48" stroke="#2B1B10" stroke-width="5" stroke-linecap="round"/>
+  <rect x="378" y="66" width="28" height="34" rx="12" fill="#2B1B10"/>
+  <g stroke="#F4E6C0" stroke-width="2" opacity="0.7">
+    <line x1="382" y1="74" x2="402" y2="74"/>
+    <line x1="382" y1="82" x2="402" y2="82"/>
+    <line x1="382" y1="90" x2="402" y2="90"/>
+  </g>
+  <!-- other arm -->
+  <path d="M264 118 q-22 8 -28 24" fill="none" stroke="#2B1B10" stroke-width="5" stroke-linecap="round"/>
+</svg>

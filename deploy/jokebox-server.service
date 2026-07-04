@@ -1,0 +1,14 @@
+[Unit]
+Description=Joke Box web server
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/jokebox/software
+ExecStart=/home/pi/jokebox/software/venv/bin/python server.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

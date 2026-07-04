@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Joke Box</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body data-dev="{{ '1' if dev_mode else '0' }}">
+
+<div id="dev-bar" class="{{ 'hidden' if not dev_mode }}">
+  <span>DEV MODE — tap the 25¢ coin to insert a quarter</span>
+  <div class="dev-bar-buttons">
+    <button id="simulate-motion-btn">🚶 Simulate Motion</button>
+    <button id="stop-jokes-btn">⏹ Stop Jokes</button>
+    <button id="admin-btn">⚙ Admin</button>
+  </div>
+</div>
+
+<div id="screen">
+
+  <!-- ASLEEP SCREEN (screen off / low power, woken by motion or coin) -->
+  <section id="screen-asleep" class="screen"></section>
+
+  <!-- IDLE SCREEN -->
+  <section id="screen-idle" class="screen active">
+    <div class="idle-topline">★ THE WORLD FAMOUS ★</div>
+    <div class="idle-title">JOKE BOX</div>
+    <div class="coin-badge" id="coin-badge">25¢</div>
+    <div class="idle-prompt">{% if free_play %}Tap to Begin — Free Play{% else %}Insert Quarter to Begin{% endif %}</div>
+    <div class="idle-tagline">5 jokes · no refunds · laughter guaranteed*</div>
+  </section>
+
+  <!-- CATEGORY MENU -->
+  <section id="screen-menu" class="screen">
+    <div class="menu-title">Pick Your Poison</div>
+    <div class="menu-grid" id="category-grid">
+      {% for cat in categories %}
+      <button class="category-btn" data-category="{{ cat.id }}">
+        <img class="cell-art" src="/static/img/cat-{{ cat.id }}.png" alt=""
+             onerror="this.onerror=null;this.src='/static/img/cat-{{ cat.id }}.svg'">
+        <span class="cell-label">{{ cat.label }}</span>
+      </button>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- JOKE PLAYBACK (fully automatic — no buttons, setup then punchline then a gap bar) -->
+  <section id="screen-joke" class="screen">
+    <div class="joke-progress" id="joke-progress">1 / 5</div>
+    <div class="joke-text">
+      <span id="joke-setup"></span>
+      <span id="joke-punchline"></span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+    <div class="rating-row" id="rating-row">
+      <div class="rate-item">
+        <button class="rate-btn" data-rating="meh" aria-label="Meh">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="8.3" cy="10.2" r="1.25" fill="currentColor" stroke="none"/>
+            <circle cx="15.7" cy="10.2" r="1.25" fill="currentColor" stroke="none"/>
+            <line x1="7.8" y1="15.6" x2="16.2" y2="15.6"/>
+          </svg>
+        </button>
+        <span class="rate-label">Meh</span>
+      </div>
+      <div class="rate-item">
+        <button class="rate-btn" data-rating="smirk" aria-label="Smirk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="8.1" cy="10.3" r="1.25" fill="currentColor" stroke="none"/>
+            <path d="M14 9.7 L17.2 8.8"/>
+            <path d="M7.6 15 Q11 16.6 13.8 15.7 Q16 15 17.1 12.5" stroke-width="2"/>
+          </svg>
+        </button>
+        <span class="rate-label">Smirk</span>
+      </div>
+      <div class="rate-item">
+        <button class="rate-btn" data-rating="laugh" aria-label="Cry-laughing">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M6 10.6 Q8.2 7.4 10.4 10.6" stroke-width="2"/>
+            <path d="M13.6 10.6 Q15.8 7.4 18 10.6" stroke-width="2"/>
+            <ellipse cx="12" cy="16" rx="4.1" ry="2.7" fill="currentColor" stroke="none"/>
+            <path d="M5.6 12.9 C4.1 14.8 4.1 16.9 5.6 18.2 C7.1 16.9 7.1 14.8 5.6 12.9 Z" fill="currentColor" stroke="none"/>
+            <path d="M18.4 12.9 C16.9 14.8 16.9 16.9 18.4 18.2 C19.9 16.9 19.9 14.8 18.4 12.9 Z" fill="currentColor" stroke="none"/>
+          </svg>
+        </button>
+        <span class="rate-label">Hilarious</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- THANKS / RESET -->
+  <section id="screen-done" class="screen">
+    <div class="done-title">Thanks!</div>
+    <div class="done-sub">Insert another quarter for more</div>
+  </section>
+
+</div>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
