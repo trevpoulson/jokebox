@@ -54,6 +54,12 @@ const MIN_VOTES_BEFORE_WEIGHTING = 3;   // a joke needs this many votes before r
                                         // one bad tap shouldn't demote a joke it just got unlucky once
 const ATTRACT_DELAY_MS = 12000;         // motion seen but no coin → barker pipes up after this long
 const ATTRACT_COOLDOWN_MS = 90000;      // minimum time between barker lines, so he doesn't heckle nonstop
+const DEMO_ATTRACT_INTERVAL_MS = 10000; // standalone demo: barker pitches this often on the idle screen
+
+// STATIC_DEMO is set by the GitHub Pages build (see scripts/build-demo.sh):
+// no server, no sensors — the demo never sleeps and barks on a timer
+// instead of reacting to motion.
+const STATIC_DEMO = !!window.STATIC_DEMO;
 const SAD_CLAP_WEIGHT_CUTOFF = 0.5;     // jokes rated this badly sometimes get the slow clap instead
 // The attract-mode pool — all four personas take turns making the pitch
 // (Sal the peanut has the most lines; he's the MC). Who says what is
@@ -279,6 +285,7 @@ function runGapBar(durationMs) {
 }
 
 function armSleepTimer() {
+  if (STATIC_DEMO) return; // the demo has no motion sensor to wake it — stay lit
   clearTimeout(sleepTimer);
   sleepTimer = setTimeout(() => {
     if (screens.idle.classList.contains("active")) showScreen("asleep");
@@ -468,10 +475,6 @@ function onMotionDetected() {
   }, ATTRACT_DELAY_MS);
 }
 
-// STATIC_DEMO is set by the GitHub Pages build (see scripts/build-demo.sh):
-// no server exists there, so events fire locally instead of round-tripping.
-const STATIC_DEMO = !!window.STATIC_DEMO;
-
 function connectEvents() {
   if (STATIC_DEMO) return; // no server to stream from
   const source = new EventSource("api/events");
@@ -544,6 +547,17 @@ document.addEventListener("touchstart", unlockAudio, { passive: true });
 // (No JS scaling — the layout is fluid: the stylesheet ties the root
 // font-size to the viewport and sizes everything in rem, so the design
 // re-flows crisply at any screen size.)
+
+// Standalone demo: no motion sensor, so the barkers work the room on a
+// timer instead — a random pitch every few seconds while the idle screen
+// is up. (Silent until the first tap unlocks browser audio.)
+if (STATIC_DEMO) {
+  setInterval(() => {
+    if (screens.idle.classList.contains("active")) {
+      playOneShot(BARKER_CLIPS[Math.floor(Math.random() * BARKER_CLIPS.length)]);
+    }
+  }, DEMO_ATTRACT_INTERVAL_MS);
+}
 
 initAudio(); // starts loading/decoding sfx clips immediately; doesn't need a gesture
 loadSessionContext(); // volume + free-play settings, applied as soon as they arrive
