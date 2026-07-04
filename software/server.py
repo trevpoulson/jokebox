@@ -45,6 +45,10 @@ RECENT_MEMORY = 10  # jokes per category excluded from re-selection until they a
 # lookup calls os.getcwd(), which can fail under some sandboxed
 # launchers even though the app's own directory is perfectly readable.
 app = Flask(__name__, root_path=str(BASE_DIR), instance_path=str(BASE_DIR / "instance"))
+# Always revalidate static assets — the kiosk is a long-lived browser
+# session on a LAN, and stale JS/CSS after an update causes broken
+# half-old/half-new pages that are miserable to diagnose.
+app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
 
 # Set False before deploying to the Pi — hides the on-screen "simulate
 # quarter" button so only real coin pulses can unlock the menu.

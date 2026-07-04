@@ -1,7 +1,12 @@
 /* JOKE BOX — vintage 70s/80s barroom theme
    Palette: aged paper, sumi-dark ink brown, rust red, mustard, avocado, burnt orange.
    Type: Alfa Slab One (big display), Rye (saloon labels), Special Elite (typewriter body).
-   Fonts are self-hosted (static/fonts/) so the kiosk works with no wifi. */
+   Fonts are self-hosted (static/fonts/) so the kiosk works with no wifi.
+
+   RESPONSIVE SCHEME: the design was drawn at 800×480 (the real device).
+   The root font-size is tied to the viewport (100vmin/48 = 10px at design
+   size), and every dimension below is in rem — so the layout genuinely
+   re-flows at any screen size, pixel-crisp, no scaling/zoom involved. */
 @font-face {
   font-family: 'Alfa Slab One';
   font-style: normal;
@@ -33,12 +38,16 @@
   --burnt: #D96C2E;
 }
 
+html {
+  /* 1rem = 10px on the 800×480 device; scales with the smaller viewport side */
+  font-size: max(5px, calc(100vmin / 48));
+}
+
 html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  /* aged paper with tobacco stains — fills the whole window, including
-     any letterbox area around the scaled 800×480 stage */
+  /* aged paper with tobacco stains */
   background:
     radial-gradient(ellipse at 18% 25%, rgba(122, 78, 30, 0.14), transparent 42%),
     radial-gradient(ellipse at 82% 75%, rgba(122, 78, 30, 0.12), transparent 45%),
@@ -51,7 +60,7 @@ html, body {
   -webkit-user-select: none;
 }
 
-/* paper grain + halftone dust over the entire window (letterbox included) */
+/* paper grain + halftone dust over the entire window */
 body::before {
   content: "";
   position: fixed;
@@ -70,44 +79,10 @@ body::before {
 body.asleep { background: #000; }
 body.asleep::before { display: none; }
 
-#dev-bar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 28px;
-  background: var(--ink);
-  color: var(--paper);
-  font-family: 'Special Elite', monospace;
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 10px;
-  z-index: 999;
-}
-#dev-bar.hidden { display: none; }
-.dev-bar-buttons { display: flex; gap: 8px; }
-#dev-bar button {
-  background: var(--paper);
-  color: var(--ink);
-  border: none;
-  border-radius: 3px;
-  padding: 3px 10px;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-/* the fixed-design stage: 800×480 (the real device's screen), scaled
-   uniformly by fitStage() in app.js to fill whatever display it's on */
+/* the stage simply fills the window — layout is fluid, not scaled */
 #screen {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 800px;
-  height: 480px;
-  transform: translate(-50%, -50%);
-  transform-origin: center;
+  position: fixed;
+  inset: 0;
 }
 /* smoky vignette over everything, like a back-corner bar wall */
 #screen::after {
@@ -115,7 +90,7 @@ body.asleep::before { display: none; }
   position: absolute;
   inset: 0;
   pointer-events: none;
-  box-shadow: inset 0 0 110px rgba(43, 27, 16, 0.45);
+  box-shadow: inset 0 0 11rem rgba(43, 27, 16, 0.45);
   z-index: 50;
 }
 
@@ -127,7 +102,7 @@ body.asleep::before { display: none; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 34px;
+  padding: 3.4rem;
 }
 .screen.active { display: flex; }
 
@@ -137,39 +112,39 @@ body.asleep::before { display: none; }
 /* ---------- IDLE ---------- */
 .idle-topline {
   font-family: 'Rye', serif;
-  font-size: 17px;
-  letter-spacing: 6px;
+  font-size: 1.7rem;
+  letter-spacing: 0.6rem;
   color: var(--rust);
-  margin-bottom: 6px;
+  margin-bottom: 0.6rem;
 }
 .idle-title {
   font-family: 'Alfa Slab One', serif;
-  font-size: 96px;
+  font-size: 9.6rem;
   line-height: 1;
-  letter-spacing: 2px;
+  letter-spacing: 0.2rem;
   color: var(--rust);
   /* hard offset print shadow + letterpress edge */
   text-shadow:
-    3px 3px 0 var(--paper-hi),
-    6px 6px 0 var(--ink);
-  margin-bottom: 22px;
+    0.3rem 0.3rem 0 var(--paper-hi),
+    0.6rem 0.6rem 0 var(--ink);
+  margin-bottom: 2.2rem;
 }
 .coin-badge {
-  width: 86px;
-  height: 86px;
+  width: 8.6rem;
+  height: 8.6rem;
   border-radius: 50%;
   background: var(--mustard);
-  border: 5px solid var(--ink);
-  box-shadow: inset 0 0 0 5px var(--paper-hi), 4px 4px 0 rgba(43,27,16,0.5);
+  border: 0.5rem solid var(--ink);
+  box-shadow: inset 0 0 0 0.5rem var(--paper-hi), 0.4rem 0.4rem 0 rgba(43,27,16,0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Alfa Slab One', serif;
-  font-size: 28px;
+  font-size: 2.8rem;
   color: var(--ink);
-  margin-bottom: 18px;
+  margin-bottom: 1.8rem;
   animation: bob 1.8s ease-in-out infinite;
-  cursor: pointer; /* dev mode: tapping the coin inserts a quarter */
+  cursor: pointer; /* dev builds: tapping the coin inserts a quarter */
 }
 .coin-badge:active {
   animation-play-state: paused;
@@ -177,46 +152,47 @@ body.asleep::before { display: none; }
 }
 @keyframes bob {
   0%, 100% { transform: translateY(0) rotate(-4deg); }
-  50% { transform: translateY(-12px) rotate(4deg); }
+  50% { transform: translateY(-1.2rem) rotate(4deg); }
 }
 .idle-prompt {
   font-family: 'Rye', serif;
-  font-size: 26px;
-  letter-spacing: 1px;
+  font-size: 2.6rem;
+  letter-spacing: 0.1rem;
   color: var(--ink);
-  border: 3px dashed var(--ink);
-  padding: 10px 26px;
+  border: 0.3rem dashed var(--ink);
+  padding: 1rem 2.6rem;
   background: var(--paper-hi);
   transform: rotate(-1deg);
 }
 .idle-tagline {
-  margin-top: 16px;
-  font-size: 14px;
-  letter-spacing: 1px;
+  margin-top: 1.6rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
   opacity: 0.65;
 }
 
 /* ---------- MENU ---------- */
 .menu-title {
   font-family: 'Alfa Slab One', serif;
-  font-size: 34px;
+  font-size: 3.4rem;
   color: var(--ink);
-  letter-spacing: 1px;
-  margin-bottom: 18px;
-  text-shadow: 2px 2px 0 var(--paper-hi), 4px 4px 0 rgba(181, 67, 46, 0.55);
+  letter-spacing: 0.1rem;
+  margin-bottom: 1.8rem;
+  text-shadow: 0.2rem 0.2rem 0 var(--paper-hi), 0.4rem 0.4rem 0 rgba(181, 67, 46, 0.55);
 }
 .menu-grid {
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap; /* narrow/portrait screens fall back to a 2×2 grid */
+  gap: 1.6rem;
   justify-content: center;
 }
 .category-btn {
   position: relative;
-  width: 170px;
+  width: 17rem;
   padding: 0;
-  border: 4px solid var(--ink);
+  border: 0.4rem solid var(--ink);
   background: var(--paper-hi);
-  box-shadow: 5px 5px 0 rgba(43, 27, 16, 0.55);
+  box-shadow: 0.5rem 0.5rem 0 rgba(43, 27, 16, 0.55);
   cursor: pointer;
   overflow: hidden;
   display: flex;
@@ -228,51 +204,51 @@ body.asleep::before { display: none; }
 .category-btn:nth-child(even) { transform: rotate(1.2deg); }
 .category-btn:active {
   transform: scale(0.96) rotate(0deg);
-  box-shadow: 2px 2px 0 rgba(43, 27, 16, 0.55);
+  box-shadow: 0.2rem 0.2rem 0 rgba(43, 27, 16, 0.55);
 }
 .cell-art {
   width: 100%;
-  aspect-ratio: 1 / 1; /* the Midjourney art is square — show all of it */
+  aspect-ratio: 1 / 1; /* the art is square — show all of it */
   object-fit: cover;
   display: block;
-  border-bottom: 4px solid var(--ink);
+  border-bottom: 0.4rem solid var(--ink);
 }
 .cell-label {
   font-family: 'Rye', serif;
-  font-size: 15px;
-  letter-spacing: 0.5px;
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
   color: var(--paper-hi);
   background: var(--ink);
-  min-height: 38px;
+  min-height: 3.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 6px;
+  padding: 0.4rem 0.6rem;
   text-align: center;
 }
 
 /* ---------- JOKE ---------- */
 .joke-progress {
   font-family: 'Rye', serif;
-  font-size: 16px;
-  letter-spacing: 4px;
+  font-size: 1.6rem;
+  letter-spacing: 0.4rem;
   color: var(--rust);
-  margin-bottom: 18px;
+  margin-bottom: 1.8rem;
 }
 .joke-text {
   font-family: 'Special Elite', monospace;
-  font-size: 30px;
+  font-size: 3rem;
   line-height: 1.45;
-  max-width: 690px;
-  margin-bottom: 26px;
+  max-width: min(69rem, 92vw);
+  margin-bottom: 2.6rem;
   min-height: 4.2em; /* reserve space so the punchline appearing doesn't jump the layout */
   color: var(--ink);
 }
 #joke-punchline {
   display: block;
   font-family: 'Alfa Slab One', serif;
-  font-size: 30px;
-  letter-spacing: 0.5px;
+  font-size: 3rem;
+  letter-spacing: 0.05rem;
   color: var(--rust);
   opacity: 0;
   transition: opacity 0.35s ease;
@@ -280,10 +256,10 @@ body.asleep::before { display: none; }
 #joke-punchline.visible { opacity: 1; }
 
 .progress-track {
-  width: 360px;
-  height: 10px;
-  border: 2px solid var(--ink);
-  border-radius: 6px;
+  width: min(36rem, 80vw);
+  height: 1rem;
+  border: 0.2rem solid var(--ink);
+  border-radius: 0.6rem;
   background: var(--paper-hi);
   overflow: hidden;
 }
@@ -292,16 +268,16 @@ body.asleep::before { display: none; }
   width: 0%;
   background: repeating-linear-gradient(
     -45deg,
-    var(--burnt) 0 10px,
-    var(--rust) 10px 20px
+    var(--burnt) 0 1rem,
+    var(--rust) 1rem 2rem
   );
 }
 
 /* ---------- RATING ---------- */
 .rating-row {
   display: flex;
-  gap: 34px;
-  margin-top: 20px;
+  gap: 3.4rem;
+  margin-top: 2rem;
   opacity: 0;
   transition: opacity 0.35s ease;
 }
@@ -310,31 +286,31 @@ body.asleep::before { display: none; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 7px;
+  gap: 0.7rem;
 }
 .rate-label {
   font-family: 'Rye', serif;
-  font-size: 13px;
-  letter-spacing: 1px;
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem;
   color: var(--ink);
   opacity: 0.75;
 }
 .rate-btn {
-  width: 64px;
-  height: 64px;
+  width: 6.4rem;
+  height: 6.4rem;
   border-radius: 50%;
-  border: 3px solid var(--ink);
+  border: 0.3rem solid var(--ink);
   background: var(--paper-hi);
   color: var(--ink);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 3px 3px 0 rgba(43, 27, 16, 0.45);
+  box-shadow: 0.3rem 0.3rem 0 rgba(43, 27, 16, 0.45);
   transition: transform 0.12s ease, background 0.15s ease, color 0.15s ease;
 }
-.rate-btn svg { width: 34px; height: 34px; }
-.rate-btn:active { transform: scale(0.92); box-shadow: 1px 1px 0 rgba(43,27,16,0.45); }
+.rate-btn svg { width: 3.4rem; height: 3.4rem; }
+.rate-btn:active { transform: scale(0.92); box-shadow: 0.1rem 0.1rem 0 rgba(43,27,16,0.45); }
 .rate-btn.voted { color: var(--paper-hi); }
 .rate-btn[data-rating="meh"].voted { background: var(--avocado); }
 .rate-btn[data-rating="smirk"].voted { background: var(--mustard); color: var(--ink); }
@@ -345,14 +321,14 @@ body.asleep::before { display: none; }
 /* ---------- DONE ---------- */
 .done-title {
   font-family: 'Alfa Slab One', serif;
-  font-size: 58px;
+  font-size: 5.8rem;
   color: var(--rust);
-  text-shadow: 3px 3px 0 var(--paper-hi), 6px 6px 0 var(--ink);
-  margin-bottom: 14px;
+  text-shadow: 0.3rem 0.3rem 0 var(--paper-hi), 0.6rem 0.6rem 0 var(--ink);
+  margin-bottom: 1.4rem;
 }
 .done-sub {
   font-family: 'Rye', serif;
-  font-size: 22px;
+  font-size: 2.2rem;
   color: var(--ink);
   opacity: 0.85;
 }

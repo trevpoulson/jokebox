@@ -505,35 +505,17 @@ if (coinBadge && document.body.dataset.dev === "1") {
   });
 }
 
-const simulateMotionBtn = document.getElementById("simulate-motion-btn");
-if (simulateMotionBtn) {
-  simulateMotionBtn.addEventListener("click", () => {
-    if (STATIC_DEMO) {
-      onMotionDetected();
-    } else {
-      fetch("api/motion-detected", { method: "POST" }).catch(() => {});
+// Invisible dev shortcuts (dev builds only, needs a keyboard):
+//   m = simulate motion   s = stop jokes / back to idle   a = open admin
+// The visible dev bar is gone; the coin badge handles quarters.
+if (document.body.dataset.dev === "1") {
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "m") {
+      if (STATIC_DEMO) onMotionDetected();
+      else fetch("api/motion-detected", { method: "POST" }).catch(() => {});
     }
-  });
-}
-
-// dev-bar shortcut into the back-office dashboard (no admin in the static demo)
-const adminBtn = document.getElementById("admin-btn");
-if (adminBtn) {
-  if (STATIC_DEMO) {
-    adminBtn.style.display = "none";
-  } else {
-    adminBtn.addEventListener("click", () => window.open("admin", "_blank"));
-  }
-}
-
-const stopJokesBtn = document.getElementById("stop-jokes-btn");
-if (stopJokesBtn) {
-  stopJokesBtn.addEventListener("click", () => {
-    // Bumping sessionToken inside goIdle() invalidates any in-flight
-    // playJokeSequence loop, so it stops advancing on its own next
-    // time it checks — no separate "cancel" flag needed. goIdle() also
-    // stops whatever clip is audibly playing right now.
-    goIdle();
+    if (e.key === "s") goIdle();
+    if (e.key === "a" && !STATIC_DEMO) window.open("admin", "_blank");
   });
 }
 
@@ -559,17 +541,9 @@ document.addEventListener("click", () => {
 document.addEventListener("pointerdown", unlockAudio);
 document.addEventListener("touchstart", unlockAudio, { passive: true });
 
-// The UI is designed at a fixed 800×480 (the real device's screen).
-// On any other display, scale the whole stage uniformly to fit —
-// full-screen on everything, letterboxed in paper when the aspect
-// ratio differs.
-function fitStage() {
-  const stage = document.getElementById("screen");
-  const scale = Math.min(window.innerWidth / 800, window.innerHeight / 480);
-  stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
-}
-window.addEventListener("resize", fitStage);
-fitStage();
+// (No JS scaling — the layout is fluid: the stylesheet ties the root
+// font-size to the viewport and sizes everything in rem, so the design
+// re-flows crisply at any screen size.)
 
 initAudio(); // starts loading/decoding sfx clips immediately; doesn't need a gesture
 loadSessionContext(); // volume + free-play settings, applied as soon as they arrive

@@ -8,15 +8,6 @@
 </head>
 <body data-dev="{{ '1' if dev_mode else '0' }}">
 
-<div id="dev-bar" class="{{ 'hidden' if not dev_mode }}">
-  <span>DEV MODE — tap the 25¢ coin to insert a quarter</span>
-  <div class="dev-bar-buttons">
-    <button id="simulate-motion-btn">🚶 Simulate Motion</button>
-    <button id="stop-jokes-btn">⏹ Stop Jokes</button>
-    <button id="admin-btn">⚙ Admin</button>
-  </div>
-</div>
-
 <div id="screen">
 
   <!-- ASLEEP SCREEN (screen off / low power, woken by motion or coin) -->
