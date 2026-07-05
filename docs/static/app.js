@@ -52,6 +52,25 @@ const JOKE_SESSION_WATCHDOG_MS = 90000; // safety net: force back to idle if som
 const SESSION_JOKE_COUNT = 5;           // jokes played per quarter — matches the original "five jokes" design
 const MIN_VOTES_BEFORE_WEIGHTING = 3;   // a joke needs this many votes before ratings affect its odds —
                                         // one bad tap shouldn't demote a joke it just got unlucky once
+const CLIENT_RECENT_MEMORY = 50;        // jokes/category remembered IN THE BROWSER to avoid repeats
+
+// Client-side recently-played memory (localStorage). This is what stops
+// repeats on the static demo (no server to persist to) AND closes a race
+// on the real kiosk: the server's joke-played POST is fire-and-forget, so
+// a quick next session could read a stale recent list — this list is
+// updated synchronously as each joke plays, with no network round-trip.
+const CLIENT_RECENT_KEY = "jb_recent";
+function loadClientRecent() {
+  try { return JSON.parse(localStorage.getItem(CLIENT_RECENT_KEY)) || {}; }
+  catch (e) { return {}; }
+}
+function pushClientRecent(category, index) {
+  const all = loadClientRecent();
+  const list = (all[category] || []).filter((i) => i !== index);
+  list.push(index);
+  all[category] = list.slice(-CLIENT_RECENT_MEMORY);
+  try { localStorage.setItem(CLIENT_RECENT_KEY, JSON.stringify(all)); } catch (e) {}
+}
 // Attract-mode cadence lives in appSettings.attract_interval (seconds,
 // admin-configurable, default 10, 0 = off) — see the attract loop below.
 
@@ -398,7 +417,11 @@ async function startCategory(categoryId) {
   // Exclude recently-played jokes so back-to-back customers don't hear
   // repeats — but only when the category still has enough left to fill
   // a session after excluding them.
-  const recent = new Set(recentData[currentCategory] || []);
+  // Union of the server's recent list and the browser's own — the client
+  // list is authoritative on the demo and closes the fire-and-forget race
+  // on the kiosk (see pushClientRecent).
+  const clientRecent = loadClientRecent()[currentCategory] || [];
+  const recent = new Set([...(recentData[currentCategory] || []), ...clientRecent]);
   let pool = base.filter((i) => !recent.has(i));
   if (pool.length < SESSION_JOKE_COUNT) pool = base;
   const weights = pool.map((i) => jokeWeight(ratingsData[`${currentCategory}:${i}`]));
@@ -450,6 +473,7 @@ async function playJokeSequence(myToken) {
     progressFill.style.width = "0%";
     resetRatingButtons();
 
+    pushClientRecent(currentCategory, currentIndex); // synchronous, works offline
     fetch("api/joke-played", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
