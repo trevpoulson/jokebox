@@ -39,6 +39,7 @@ DEFAULT_SETTINGS = {
     "disabled_jokes": [],       # "<category>:<index>" keys pulled from rotation
     "disabled_categories": [],  # category ids hidden from the menu entirely
     "admin_pin": "0000",        # numeric PIN for the on-screen staff keypad
+    "attract_interval": 10,     # seconds between barker pitches on the idle screen (0 = off)
 }
 RECENT_MEMORY = 50  # jokes per category excluded from re-selection until they age out
                     # (= the last 10 sessions at 5 jokes each; the frontend falls back
@@ -300,6 +301,10 @@ def admin_settings():
         except ValueError:
             pass
         settings["free_play"] = request.form.get("free_play") == "on"
+        try:
+            settings["attract_interval"] = min(300, max(0, int(request.form.get("attract_interval", 10))))
+        except ValueError:
+            pass
         save_settings(settings)
     return '<meta http-equiv="refresh" content="0; url=/admin">'
 

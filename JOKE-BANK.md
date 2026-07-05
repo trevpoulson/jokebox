@@ -146,7 +146,9 @@ written down).
 
 ## Family Friendly
 
-### Selected for the app — 100 live
+### Selected for the app — 99 live
+
+> 2026-07-05: "Where do you find a dog with no legs? → Right where you left him." CUT at Trev's request (post-launch removal; audio/ratings indices remapped). Do not re-add.
 
 Already live (01–05): scarecrow outstanding in his field · gummy bear · nose/foot · wall corner · bicycle two-tired
 
@@ -191,77 +193,76 @@ re-leveled).
 27. What animal needs to wear a wig? → A bald eagle.
 28. What do you call a fly without wings? → A walk.
 29. Why do bees have sticky hair? → Because they use honeycombs.
-30. Where do you find a dog with no legs? → Right where you left him.
-31. What did the pig say on a hot day? → I'm bacon!
-32. How do you know if there's an elephant under your bed? → Your head hits the ceiling.
-33. How do you keep an elephant from charging? → Take away her credit card.
-34. Why did the elephant paint himself different colors? → So he could hide in the crayon box.
-35. How can you tell if an elephant has been in your refrigerator? → By the footprints in the butter.
-36. What time is it when a lion walks into the room? → Time to leave!
-37. What do you call a hen who counts her eggs? → A mathema-chicken.
-38. What kind of lion doesn't roar? → A dandelion.
-39. What kind of haircuts do bees get? → Buzzcuts.
-40. What did the frog order for lunch? → A burger and a diet croak.
-41. Why couldn't the pony sing in the choir? → Because she was a little horse.
-42. What does an evil hen lay? → Deviled eggs.
-43. What do cows order from? → Cattle-logs.
-44. What do you call the horse that lives next door? → Your neigh-bor.
-45. Why do seagulls fly over the sea? → Because if they flew over the bay, they'd be bagels.
-46. What do fish play on the piano? → Scales.
-47. What do snakes like to study in school? → Hiss-tory.
-48. Why did the chicken cross the playground? → To get to the other slide.
-49. Why did the teacher put on sunglasses? → Because her students were so bright.
-50. Why can't the music teacher start his car? → He left his keys on the piano.
-51. Why did the computer sneeze? → It had a virus.
-52. How does a scientist freshen her breath? → With experi-mints.
-53. What is a computer programmer's favorite snack? → Computer chips.
-54. Why did the boy throw his clock out the window? → He wanted to see time fly.
-55. What has four wheels and flies? → A garbage truck.
-56. Why did the man run around his bed? → He was trying to catch up on his sleep.
-57. What do librarians take when they go fishing? → Book worms.
-58. What did the traffic light say to the truck? → Don't look! I'm changing.
-59. What do you call a train carrying bubble gum? → A chew-chew train.
-60. If April showers bring May flowers, what do May flowers bring? → Pilgrims.
-61. What do you get when you cross a snowman with a vampire? → Frostbite.
-62. Why are ghosts bad liars? → Because you can see right through them.
-63. How do you fix a cracked pumpkin? → With a pumpkin patch.
-64. What's blue and smells like red paint? → Blue paint.
-65. How do you make a lemon drop? → Just let go of it.
-66. How do you talk to a giant? → Use big words.
-67. Where do hamburgers go dancing? → At a meat ball.
-68. Why do strings never win a race? → Because they always tie.
-69. Why didn't the teddy bear want any dessert? → Because she was stuffed.
-70. Why did the gum cross the road? → It was stuck to the chicken's foot.
-71. What has hands but can't clap? → A clock.
-72. Why did the man put sugar on his pillow? → He wanted to have sweet dreams.
-73. What do you call two banana peels? → A pair of slippers.
-74. What's the difference between broccoli and boogers? → Kids don't eat broccoli.
-75. Why should you never talk to circles? → There's just no point.
-76. What's red and bad for your teeth? → A brick.
-77. What kind of music do balloons hate? → Pop music.
-78. What do you give a hurt lemon? → Lemon aid.
-79. How do all the oceans say hello to each other? → They wave.
-80. What do you call a flower that runs on electricity? → A power plant.
-81. Why do birds fly south in the winter? → Because it's too far to walk.
-82. What do you call a retired vegetable? → A has-bean.
-83. What has a ton of ears but can't hear a thing? → A corn field.
-84. What is a tornado's favorite game? → Twister.
-85. What's a king's favorite kind of weather? → Rain.
-86. How many apples grow on a tree? → All of them.
-87. Why is it dangerous to play cards in the jungle? → Because there are so many cheetahs.
-88. What kind of tree fits in your hand? → A palm tree.
-89. What do you call a sheep with no legs? → A cloud.
-90. Why is Superman's outfit always so tight? → It's a size S.
-91. What do you call a nosy pepper? → Jalapeno business.
-92. Why do mushrooms get invited to all the parties? → Because they're such fun-guys.
-93. Why does Peter Pan fly around so much? → He Neverlands.
-94. What's an astronaut's favorite meal of the day? → Launch.
-95. What does a volcano say to his crush? → I lava you.
-96. What do you call a turtle that's famous? → A shell-ebrity.
-97. What's a really sad strawberry called? → A blueberry.
-98. Knock knock. Who's there? A little old lady. A little old lady who? → Wow, I didn't know you could yodel!
-99. Can a kangaroo jump higher than the Empire State Building? → Of course — the building can't jump.
-100. Which hand is better to write with? → Neither. It's better to write with a pencil.
+30. What did the pig say on a hot day? → I'm bacon!
+31. How do you know if there's an elephant under your bed? → Your head hits the ceiling.
+32. How do you keep an elephant from charging? → Take away her credit card.
+33. Why did the elephant paint himself different colors? → So he could hide in the crayon box.
+34. How can you tell if an elephant has been in your refrigerator? → By the footprints in the butter.
+35. What time is it when a lion walks into the room? → Time to leave!
+36. What do you call a hen who counts her eggs? → A mathema-chicken.
+37. What kind of lion doesn't roar? → A dandelion.
+38. What kind of haircuts do bees get? → Buzzcuts.
+39. What did the frog order for lunch? → A burger and a diet croak.
+40. Why couldn't the pony sing in the choir? → Because she was a little horse.
+41. What does an evil hen lay? → Deviled eggs.
+42. What do cows order from? → Cattle-logs.
+43. What do you call the horse that lives next door? → Your neigh-bor.
+44. Why do seagulls fly over the sea? → Because if they flew over the bay, they'd be bagels.
+45. What do fish play on the piano? → Scales.
+46. What do snakes like to study in school? → Hiss-tory.
+47. Why did the chicken cross the playground? → To get to the other slide.
+48. Why did the teacher put on sunglasses? → Because her students were so bright.
+49. Why can't the music teacher start his car? → He left his keys on the piano.
+50. Why did the computer sneeze? → It had a virus.
+51. How does a scientist freshen her breath? → With experi-mints.
+52. What is a computer programmer's favorite snack? → Computer chips.
+53. Why did the boy throw his clock out the window? → He wanted to see time fly.
+54. What has four wheels and flies? → A garbage truck.
+55. Why did the man run around his bed? → He was trying to catch up on his sleep.
+56. What do librarians take when they go fishing? → Book worms.
+57. What did the traffic light say to the truck? → Don't look! I'm changing.
+58. What do you call a train carrying bubble gum? → A chew-chew train.
+59. If April showers bring May flowers, what do May flowers bring? → Pilgrims.
+60. What do you get when you cross a snowman with a vampire? → Frostbite.
+61. Why are ghosts bad liars? → Because you can see right through them.
+62. How do you fix a cracked pumpkin? → With a pumpkin patch.
+63. What's blue and smells like red paint? → Blue paint.
+64. How do you make a lemon drop? → Just let go of it.
+65. How do you talk to a giant? → Use big words.
+66. Where do hamburgers go dancing? → At a meat ball.
+67. Why do strings never win a race? → Because they always tie.
+68. Why didn't the teddy bear want any dessert? → Because she was stuffed.
+69. Why did the gum cross the road? → It was stuck to the chicken's foot.
+70. What has hands but can't clap? → A clock.
+71. Why did the man put sugar on his pillow? → He wanted to have sweet dreams.
+72. What do you call two banana peels? → A pair of slippers.
+73. What's the difference between broccoli and boogers? → Kids don't eat broccoli.
+74. Why should you never talk to circles? → There's just no point.
+75. What's red and bad for your teeth? → A brick.
+76. What kind of music do balloons hate? → Pop music.
+77. What do you give a hurt lemon? → Lemon aid.
+78. How do all the oceans say hello to each other? → They wave.
+79. What do you call a flower that runs on electricity? → A power plant.
+80. Why do birds fly south in the winter? → Because it's too far to walk.
+81. What do you call a retired vegetable? → A has-bean.
+82. What has a ton of ears but can't hear a thing? → A corn field.
+83. What is a tornado's favorite game? → Twister.
+84. What's a king's favorite kind of weather? → Rain.
+85. How many apples grow on a tree? → All of them.
+86. Why is it dangerous to play cards in the jungle? → Because there are so many cheetahs.
+87. What kind of tree fits in your hand? → A palm tree.
+88. What do you call a sheep with no legs? → A cloud.
+89. Why is Superman's outfit always so tight? → It's a size S.
+90. What do you call a nosy pepper? → Jalapeno business.
+91. Why do mushrooms get invited to all the parties? → Because they're such fun-guys.
+92. Why does Peter Pan fly around so much? → He Neverlands.
+93. What's an astronaut's favorite meal of the day? → Launch.
+94. What does a volcano say to his crush? → I lava you.
+95. What do you call a turtle that's famous? → A shell-ebrity.
+96. What's a really sad strawberry called? → A blueberry.
+97. Knock knock. Who's there? A little old lady. A little old lady who? → Wow, I didn't know you could yodel!
+98. Can a kangaroo jump higher than the Empire State Building? → Of course — the building can't jump.
+99. Which hand is better to write with? → Neither. It's better to write with a pencil.
 
 **Cut during the expansion sweep:** visual-only puns, the
 elephant/grapes/Tarzan three-parter (needs all three parts), weak

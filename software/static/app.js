@@ -30,7 +30,7 @@ const rateButtons = document.querySelectorAll(".rate-btn");
 let jokesData = null;
 let ratingsData = {}; // "<category>:<index>" -> {meh, smirk, laugh}, refetched each session
 let recentData = {};  // "<category>" -> [recently played indices], server-persisted
-let appSettings = { volume: 1.0, free_play: false };
+let appSettings = { volume: 1.0, free_play: false, attract_interval: 10 };
 let currentCategory = null;
 let currentIndex = 0;      // the joke's real index within its category (for audio/rating lookups)
 let sessionIndices = [];   // the (weighted-random) subset of indices picked for this playthrough
@@ -39,8 +39,8 @@ let hasVotedThisJoke = false;
 let credits = 0;           // extra quarters banked while a session is already running
 let sleepTimer = null;
 let watchdogTimer = null;
-let attractTimer = null;   // barker timer: motion seen, but no coin yet
-let lastBarkerAt = 0;      // cooldown so the barker doesn't heckle nonstop
+let lastBarkerAt = 0;      // last barker pitch — the attract loop waits a full
+                           // interval from this before the next one
 let sessionToken = 0; // bumped whenever we leave the joke screen, so any
                        // in-flight async joke sequence knows to stop
 
@@ -52,9 +52,8 @@ const JOKE_SESSION_WATCHDOG_MS = 90000; // safety net: force back to idle if som
 const SESSION_JOKE_COUNT = 5;           // jokes played per quarter — matches the original "five jokes" design
 const MIN_VOTES_BEFORE_WEIGHTING = 3;   // a joke needs this many votes before ratings affect its odds —
                                         // one bad tap shouldn't demote a joke it just got unlucky once
-const ATTRACT_DELAY_MS = 12000;         // motion seen but no coin → barker pipes up after this long
-const ATTRACT_COOLDOWN_MS = 90000;      // minimum time between barker lines, so he doesn't heckle nonstop
-const DEMO_ATTRACT_INTERVAL_MS = 10000; // standalone demo: barker pitches this often on the idle screen
+// Attract-mode cadence lives in appSettings.attract_interval (seconds,
+// admin-configurable, default 10, 0 = off) — see the attract loop below.
 
 // STATIC_DEMO is set by the GitHub Pages build (see scripts/build-demo.sh):
 // no server, no sensors — the demo never sleeps and barks on a timer
@@ -354,6 +353,7 @@ function goIdle() {
   sessionToken++; // invalidate any in-flight joke sequence
   stopCurrentPlayback(); // cut off audio immediately rather than letting it finish
   showScreen("idle");
+  lastBarkerAt = Date.now(); // attract loop waits a full interval from here
   armSleepTimer();
 }
 
@@ -379,7 +379,6 @@ async function loadSessionContext() {
 
 async function startCategory(categoryId) {
   clearTimeout(sleepTimer);
-  clearTimeout(attractTimer);
   currentCategory = categoryId;
   sessionToken++;
   const myToken = sessionToken;
@@ -439,8 +438,13 @@ async function playJokeSequence(myToken) {
     currentIndex = sessionIndices[sessionPos];
     const joke = cat.jokes[currentIndex];
     setupEl.textContent = joke.setup;
-    punchlineEl.textContent = joke.punchline;
+    // Hide instantly (no fade-out) BEFORE swapping the text — otherwise
+    // the 0.35s opacity transition briefly shows the NEW punchline fading away.
+    punchlineEl.style.transition = "none";
     punchlineEl.classList.remove("visible");
+    punchlineEl.textContent = joke.punchline;
+    void punchlineEl.offsetWidth;        // flush styles so the hide applies now
+    punchlineEl.style.transition = "";   // restore the fade for the reveal
     progressEl.textContent = `${sessionPos + 1} / ${sessionIndices.length}`;
     progressFill.style.transition = "none";
     progressFill.style.width = "0%";
@@ -512,7 +516,6 @@ function updateCreditsUI() {
 
 function onCoinInserted() {
   clearTimeout(sleepTimer);
-  clearTimeout(attractTimer);
   playOneShot(CLINK_CLIP); // satisfying clink, every single time
   // From idle/asleep, this quarter starts a round directly — straight to
   // the menu (the acceptor stays powered even while the screen sleeps).
@@ -529,19 +532,10 @@ function onCoinInserted() {
 
 function onMotionDetected() {
   // Motion only matters if we're currently asleep — if someone's
-  // already at the idle/menu/joke screens this just no-ops.
+  // already at the idle/menu/joke screens this just no-ops. The attract
+  // loop below takes over once the idle screen is up.
   if (!screens.asleep.classList.contains("active")) return;
   goIdle();
-  // Someone walked up but hasn't paid: after a beat, the barker makes
-  // his pitch (with a long cooldown so he doesn't heckle the sink line).
-  clearTimeout(attractTimer);
-  attractTimer = setTimeout(() => {
-    const idleOrMenu = screens.idle.classList.contains("active") || screens.menu.classList.contains("active");
-    if (idleOrMenu && Date.now() - lastBarkerAt > ATTRACT_COOLDOWN_MS) {
-      lastBarkerAt = Date.now();
-      playBarker(BARKER_CLIPS[Math.floor(Math.random() * BARKER_CLIPS.length)]);
-    }
-  }, ATTRACT_DELAY_MS);
 }
 
 function connectEvents() {
@@ -706,16 +700,18 @@ document.addEventListener("visibilitychange", () => {
 // font-size to the viewport and sizes everything in rem, so the design
 // re-flows crisply at any screen size.)
 
-// Standalone demo: no motion sensor, so the barkers work the room on a
-// timer instead — a random pitch every few seconds while the idle screen
-// is up. (Silent until the first tap unlocks browser audio.)
-if (STATIC_DEMO) {
-  setInterval(() => {
-    if (screens.idle.classList.contains("active")) {
-      playBarker(BARKER_CLIPS[Math.floor(Math.random() * BARKER_CLIPS.length)]);
-    }
-  }, DEMO_ATTRACT_INTERVAL_MS);
-}
+// Attract mode: while the idle screen is up, a barker makes the pitch
+// every `attract_interval` seconds (House Settings in /admin; default 10,
+// 0 turns it off). One loop serves both the kiosk and the standalone
+// demo. (Silent until the first tap unlocks browser audio.)
+setInterval(() => {
+  const secs = Number(appSettings.attract_interval);
+  if (!secs || secs <= 0) return;
+  if (!screens.idle.classList.contains("active")) return;
+  if (Date.now() - lastBarkerAt < secs * 1000) return;
+  lastBarkerAt = Date.now();
+  playBarker(BARKER_CLIPS[Math.floor(Math.random() * BARKER_CLIPS.length)]);
+}, 1000);
 
 initAudio(); // starts loading/decoding sfx clips immediately; doesn't need a gesture
 loadSessionContext(); // volume + free-play settings, applied as soon as they arrive
