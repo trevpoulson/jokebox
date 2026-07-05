@@ -16,7 +16,7 @@ Sources: [300 Best Dad Jokes – TODAY](https://www.today.com/life/dad-jokes-rcn
 
 ## Dad Jokes
 
-### Selected for the app (target 25)
+### Selected for the app — 100 live
 
 Already live (01–05): anti-gravity book · banker lost interest · skeletons no guts · alphabet "y" · fish with no eyes
 
@@ -43,7 +43,98 @@ New picks (06–25):
 24. Kid: "I'll call you later." → Dad: "Please, call me Dad."
 25. Kid: "Make me a sandwich!" → Dad: "Poof! You're a sandwich."
 
-### Considered but cut
+
+### Expansion to 100 (2026-07-05)
+
+Jokes 26–100 (75 new), curated from Bored Panda's and Best Life's
+verified dad-joke roundups; all classics, none invented. Deduped against
+every other category (setup + punchline, normalized comparison — zero
+overlap). Audio: Redneck Jokester, [deadpan] setup / [amused] punchline,
+normalized to -16 LUFS, all 150 clips fidelity-checked (3 quiet clips
+re-leveled; rest clean or normal v3 pacing quirks).
+
+26. How do you make holy water? → You boil the hell out of it.
+27. Did you know the first French fries weren't cooked in France? → They were cooked in Greece.
+28. If a kid refuses to sleep during nap time... → are they guilty of resisting a rest?
+29. What do you call someone with no body and no nose? → Nobody knows.
+30. I ordered a chicken and an egg online. → I'll let you know.
+31. What's the least spoken language in the world? → Sign language.
+32. My daughter yelled, "Dad, you haven't listened to one word I've said!" → What a strange way to start a conversation.
+33. A slice of apple pie is $2.50 in Jamaica and $3.00 in the Bahamas. → Those are the pie rates of the Caribbean.
+34. Have you seen the town cemetery? → People are just dying to get in.
+35. The fattest knight at King Arthur's round table was Sir Cumference. → He acquired his size from too much pi.
+36. Why can't you hear a pterodactyl go to the bathroom? → Because the pee is silent.
+37. Spring is here! I got so excited... → I wet my plants.
+38. If you see a robbery at an Apple Store... → does that make you an iWitness?
+39. Did you hear FedEx and UPS are merging? → They're going by Fed-Up now.
+40. Why did the invisible man turn down the job offer? → He couldn't see himself doing it.
+41. What did the pirate say on his eightieth birthday? → Aye matey.
+42. What do you call a dog that can do magic? → A labracadabrador.
+43. What do you call a deer with no eyes? → No idea.
+44. What time did the man go to the dentist? → Tooth hurt-y.
+45. A termite walks into a bar and asks... → "Is the bar tender here?"
+46. Two guys walk into a bar. → The third one ducks.
+47. How many tickles does it take to make an octopus laugh? → Ten tickles.
+48. A ham sandwich walks into a bar and orders a beer. → The bartender says, "Sorry, we don't serve food here."
+49. Can February March? → No, but April May.
+50. What did the buffalo say to his son leaving for school? → Bison.
+51. Two peanuts were walking down the street. → One was a salted.
+52. How does the man in the moon cut his hair? → Eclipse it.
+53. What's more unbelievable than a talking dog? → A spelling bee.
+54. Why did the stadium get so hot after the game? → All the fans left.
+55. What did the ranch dressing say when you opened the fridge? → Close the door, I'm dressing.
+56. How do you make a tissue dance? → Put a little boogie in it.
+57. Did you hear the rumor about butter? → Well, I'm not going to spread it.
+58. Have you heard about those new corduroy pillows? → They're making headlines.
+59. Where do fruits go on vacation? → Pear-is.
+60. Why did the nose feel sad? → It was always getting picked on.
+61. Why did the deer go to the dentist? → It had buck teeth.
+62. What do you call someone who goes to the bathroom in France? → European.
+63. Why was the coach yelling at the vending machine? → He wanted his quarter back.
+64. Did you hear about the ATM addict? → He suffered from withdrawals.
+65. My doctor told me I'm going deaf. → The news was hard for me to hear.
+66. What do you call a sad cup of coffee? → A depresso.
+67. Someone complimented my parking today. → They left a note that said "parking fine."
+68. Why do nurses like red crayons? → Sometimes they have to draw blood.
+69. Why do trees seem suspicious on sunny days? → They just seem a little shady.
+70. What did the policeman say to his belly button? → You're under a vest.
+71. Why did the math book look so sad? → It had a lot of problems.
+72. I don't go to funerals before noon. → I'm just not a mourning person.
+73. What do scholars eat when they're hungry? → Academia nuts.
+74. When does a joke become a dad joke? → When it becomes apparent.
+75. What do you call a potato wearing glasses? → A spec-tater.
+76. What do you call a fake noodle? → An impasta.
+77. What do you call a guy with a rubber toe? → Roberto.
+78. What do you call a donkey with three legs? → A wonkey.
+79. Did you hear about the ice cream truck accident? → It crashed on rocky road.
+80. When is a door not a door? → When it's ajar.
+81. How do you organize a space party? → You planet.
+82. What's an astronaut's favorite part of a computer? → The space bar.
+83. I'd never buy anything with velcro. → It's a total rip-off.
+84. How does a lawyer say goodbye? → I'll be suing ya.
+85. Want to hear a joke about construction? → I'm still working on it.
+86. What rock group has four men who don't sing? → Mount Rushmore.
+87. Why shouldn't you iron a four-leaf clover? → You don't want to press your luck.
+88. What do sprinters eat before a race? → Nothing. They fast.
+89. Did you hear about the restaurant on the moon? → Great food, but no atmosphere.
+90. Why do melons have weddings? → Because they cantaloupe.
+91. Did you hear about the guy who invented Lifesavers? → They say he made a mint.
+92. How does Moses make his coffee? → Hebrews it.
+93. What's E.T. short for? → He's only got little legs.
+94. Did you hear about the circus fire? → It was in tents.
+95. I never buy pre-shredded cheese. → Shredding it yourself is just grate.
+96. I used to run a dating service for chickens. → I struggled to make hens meet.
+97. I used to work in shoe recycling. → It was sole destroying.
+98. My boss told me to have a good day. → So I went home.
+99. I used to play piano by ear. → Now I use my hands.
+100. My friend said, "Let's make chess interesting." → So we stopped playing.
+
+**Cut during the expansion sweep:** dark/death-adjacent material (didn't
+fit Earl), political jokes, and visual-only puns that don't work read
+aloud (spelling gags, "no pun in ten did"-style wordplay you have to see
+written down).
+
+### Considered but cut (original 25 round)
 
 - "Quiet tennis... same as regular tennis but without the racket." — CUT, weak: the pun barely lands and needs too much explaining.
 - "What's the best thing about Switzerland? The flag is a big plus." — held as a backup, didn't make final 25 only for space, genuinely fine.
@@ -187,4 +278,6 @@ handful of cheeky/risqué ones at the end, all in the New York Jokester voice
 
 ## Status (2026-07-04)
 
-All four categories are live in the app at 25/25/25/20 jokes (Dad/Family/Adults Only/Mixed Nuts). All 150 audio clips for the 3 main categories generated via ElevenLabs (`eleven_v3`), fidelity-checked (120 new clips: 109 faithful, 11 flagged for minor pacing/loudness quirks — none affecting comprehension, none regenerated), loudness-normalized to -16 LUFS, and verified non-corrupt. See `jokebox-joke-standards` memory for the content rules every joke here was checked against.
+**Update 2026-07-05:** Dad Jokes expanded to 100 (see expansion section above) — app is now at **100**/25/25/20. Family Friendly, Adults Only, and Mixed Nuts expansions are next, in that order.
+
+Previous milestone (2026-07-04): all four categories live at 25/25/25/20 jokes (Dad/Family/Adults Only/Mixed Nuts). All 150 audio clips for the 3 main categories generated via ElevenLabs (`eleven_v3`), fidelity-checked (120 new clips: 109 faithful, 11 flagged for minor pacing/loudness quirks — none affecting comprehension, none regenerated), loudness-normalized to -16 LUFS, and verified non-corrupt. See `jokebox-joke-standards` memory for the content rules every joke here was checked against.
