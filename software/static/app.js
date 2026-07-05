@@ -67,6 +67,7 @@ const SAD_CLAP_WEIGHT_CUTOFF = 0.5;     // jokes rated this badly sometimes get 
 const BARKER_CLIPS = Array.from({ length: 13 }, (_, i) => `static/audio/barker${i + 1}.mp3`);
 const LAUGH_CLIPS = ["static/audio/laugh.mp3", "static/audio/laugh2.mp3", "static/audio/laugh3.mp3"];
 const SAD_CLAP_CLIP = "static/audio/sadclap.mp3";
+const CLINK_CLIP = "static/audio/clink.mp3"; // quarter hitting the coin box
 
 // Turns a joke's vote counts into a selection weight. Below the vote
 // threshold every joke is neutral (weight 1) so a joke doesn't get
@@ -134,7 +135,7 @@ function initAudio() {
   masterGain = audioCtx.createGain();
   masterGain.gain.value = appSettings.volume;
   masterGain.connect(audioCtx.destination);
-  [...LAUGH_CLIPS, ...BARKER_CLIPS, SAD_CLAP_CLIP].forEach((u) =>
+  [...LAUGH_CLIPS, ...BARKER_CLIPS, SAD_CLAP_CLIP, CLINK_CLIP].forEach((u) =>
     loadClip(u).catch((e) => console.warn("sfx failed to load", u, e))
   );
 }
@@ -458,9 +459,11 @@ async function playJokeSequence(myToken) {
   showScreen("done");
   await sleep(DONE_DISPLAY_MS);
   if (myToken !== sessionToken) return;
-  // a quarter banked mid-session buys the next round immediately
+  // a banked quarter buys the next round immediately — right back to
+  // the joke selection screen
   if (credits > 0) {
     credits--;
+    updateCreditsUI();
     playLaughter();
     showScreen("menu");
   } else {
@@ -486,19 +489,29 @@ rateButtons.forEach((btn) => {
   btn.addEventListener("click", () => rateCurrentJoke(btn.dataset.rating));
 });
 
+// keeps the on-screen ticket in sync with banked quarters
+function updateCreditsUI() {
+  const el = document.getElementById("credit-counter");
+  if (!el) return;
+  el.textContent = `CREDITS × ${credits}`;
+  el.classList.toggle("visible", credits > 0);
+}
+
 function onCoinInserted() {
   clearTimeout(sleepTimer);
   clearTimeout(attractTimer);
-  // A quarter dropped mid-session banks a credit for the next round
-  // instead of interrupting the jokes already playing.
-  if (screens.joke.classList.contains("active") || screens.done.classList.contains("active")) {
-    credits++;
+  playOneShot(CLINK_CLIP); // satisfying clink, every single time
+  // From idle/asleep, this quarter starts a round directly — straight to
+  // the menu (the acceptor stays powered even while the screen sleeps).
+  if (screens.idle.classList.contains("active") || screens.asleep.classList.contains("active")) {
+    playLaughter();
+    showScreen("menu");
     return;
   }
-  // Otherwise (asleep/idle/menu) it starts a round: straight to the
-  // menu — the acceptor stays powered even while the screen sleeps.
-  playLaughter();
-  showScreen("menu");
+  // Anywhere else (menu, mid-jokes, thanks screen) the quarter banks a
+  // credit for another round instead of interrupting anything.
+  credits++;
+  updateCreditsUI();
 }
 
 function onMotionDetected() {

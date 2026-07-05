@@ -42,6 +42,12 @@ html {
   /* 1rem = 10px on the 800×480 device; scales with the smaller viewport side */
   font-size: max(5px, calc(100vmin / 48));
 }
+/* portrait (phones held upright): the width is the tight dimension, so
+   size off it instead — otherwise everything shrinks to the narrow side
+   while acres of vertical space go unused */
+@media (orientation: portrait) {
+  html { font-size: max(5px, calc(100vw / 44)); }
+}
 
 html, body {
   width: 100%;
@@ -102,9 +108,33 @@ body.asleep::before { display: none; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 3.4rem;
+  /* keep clear of phone notches/home bars when running fullscreen */
+  padding: max(3.4rem, env(safe-area-inset-top, 0px))
+           max(3.4rem, env(safe-area-inset-right, 0px))
+           max(3.4rem, env(safe-area-inset-bottom, 0px))
+           max(3.4rem, env(safe-area-inset-left, 0px));
 }
 .screen.active { display: flex; }
+
+/* banked-quarters ticket, pinned over whatever screen is up */
+#credit-counter {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 55;
+  font-family: 'Rye', serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  color: var(--ink);
+  background: var(--mustard);
+  border: 0.3rem solid var(--ink);
+  box-shadow: 0.3rem 0.3rem 0 rgba(43, 27, 16, 0.5);
+  padding: 0.7rem 1.4rem;
+  transform: rotate(2deg);
+  display: none;
+}
+#credit-counter.visible { display: block; }
+body.asleep #credit-counter { display: none; }
 
 /* asleep stays true black — it's pretending the screen is off */
 #screen-asleep { background: #000; z-index: 60; }
@@ -119,7 +149,7 @@ body.asleep::before { display: none; }
 }
 .idle-title {
   font-family: 'Alfa Slab One', serif;
-  font-size: 9.6rem;
+  font-size: min(9.6rem, 17vw);
   line-height: 1;
   letter-spacing: 0.2rem;
   color: var(--rust);
@@ -174,7 +204,7 @@ body.asleep::before { display: none; }
 /* ---------- MENU ---------- */
 .menu-title {
   font-family: 'Alfa Slab One', serif;
-  font-size: 3.4rem;
+  font-size: min(3.4rem, 8vw);
   color: var(--ink);
   letter-spacing: 0.1rem;
   margin-bottom: 1.8rem;
@@ -321,7 +351,7 @@ body.asleep::before { display: none; }
 /* ---------- DONE ---------- */
 .done-title {
   font-family: 'Alfa Slab One', serif;
-  font-size: 5.8rem;
+  font-size: min(5.8rem, 13vw);
   color: var(--rust);
   text-shadow: 0.3rem 0.3rem 0 var(--paper-hi), 0.6rem 0.6rem 0 var(--ink);
   margin-bottom: 1.4rem;
