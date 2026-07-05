@@ -106,6 +106,10 @@ form.settings button {
     <input type="checkbox" name="free_play" {% if settings.free_play %}checked{% endif %}>
     Free play (no quarter needed)
   </label>
+  <label>
+    <input type="checkbox" name="hide_adults" {% if settings.hide_adults %}checked{% endif %}>
+    Hide the Adults Only section (family-friendly mode)
+  </label>
   <label>Barker every
     <input type="number" name="attract_interval" min="0" max="300" step="5"
            value="{{ settings.attract_interval }}" style="width: 5em;">
@@ -113,7 +117,7 @@ form.settings button {
   </label>
   <button type="submit">Save</button>
 </form>
-<div class="note">Changes take effect the next time the kiosk starts a session (volume, barker timing) or reloads (free play).</div>
+<div class="note">Changes take effect the next time the kiosk starts a session (volume, barker timing) or reloads (free play, hide Adults Only).</div>
 
 <h2>The Lineup — what's in rotation</h2>
 <form method="POST" action="/admin/content">

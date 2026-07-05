@@ -40,6 +40,7 @@ DEFAULT_SETTINGS = {
     "disabled_categories": [],  # category ids hidden from the menu entirely
     "admin_pin": "0000",        # numeric PIN for the on-screen staff keypad
     "attract_interval": 10,     # seconds between barker pitches on the idle screen (0 = off)
+    "hide_adults": False,       # when True, the Adults Only category is hidden from the menu
 }
 RECENT_MEMORY = 50  # jokes per category excluded from re-selection until they age out
                     # (= the last 10 sessions at 5 jokes each; the frontend falls back
@@ -112,6 +113,8 @@ def index():
     jokes = load_jokes()
     settings = load_settings()
     disabled_cats = set(settings.get("disabled_categories", []))
+    if settings.get("hide_adults"):
+        disabled_cats.add("dirty")  # Adults Only
     categories = [
         {"id": k, "label": v["label"]}
         for k, v in jokes.items()
@@ -301,6 +304,7 @@ def admin_settings():
         except ValueError:
             pass
         settings["free_play"] = request.form.get("free_play") == "on"
+        settings["hide_adults"] = request.form.get("hide_adults") == "on"
         try:
             settings["attract_interval"] = min(300, max(0, int(request.form.get("attract_interval", 10))))
         except ValueError:
