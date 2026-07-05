@@ -68,6 +68,14 @@ const BARKER_CLIPS = Array.from({ length: 13 }, (_, i) => `static/audio/barker${
 const LAUGH_CLIPS = ["static/audio/laugh.mp3", "static/audio/laugh2.mp3", "static/audio/laugh3.mp3"];
 const SAD_CLAP_CLIP = "static/audio/sadclap.mp3";
 const CLINK_CLIP = "static/audio/clink.mp3"; // quarter hitting the coin box
+// The canonical response to a dad joke isn't laughter — it's the groan.
+// Earl's punchlines mostly earn groans, playful boos, or a rimshot.
+const DAD_REACTION_CLIPS = [
+  "static/audio/groan1.mp3",
+  "static/audio/groan2.mp3",
+  "static/audio/boo.mp3",
+  "static/audio/rimshot.mp3",
+];
 
 // Turns a joke's vote counts into a selection weight. Below the vote
 // threshold every joke is neutral (weight 1) so a joke doesn't get
@@ -135,7 +143,7 @@ function initAudio() {
   masterGain = audioCtx.createGain();
   masterGain.gain.value = appSettings.volume;
   masterGain.connect(audioCtx.destination);
-  [...LAUGH_CLIPS, ...BARKER_CLIPS, SAD_CLAP_CLIP, CLINK_CLIP].forEach((u) =>
+  [...LAUGH_CLIPS, ...BARKER_CLIPS, ...DAD_REACTION_CLIPS, SAD_CLAP_CLIP, CLINK_CLIP].forEach((u) =>
     loadClip(u).catch((e) => console.warn("sfx failed to load", u, e))
   );
 }
@@ -272,16 +280,21 @@ function stopBarker(fadeMs = 200) {
   }
 }
 
-// Reaction after a punchline. Usually a randomly-picked laugh track, but a
-// joke that's earned a genuinely bad rating sometimes gets the lone slow
-// clap instead — the crowd has spoken.
-function playReaction(counts) {
+// Reaction after a punchline. Most categories get a laugh track; dad
+// jokes mostly earn what dad jokes deserve — groans, playful boos, and
+// the occasional rimshot (tongue-in-cheek, laughs still sneak in). A
+// joke with a genuinely bad rating sometimes gets the lone slow clap.
+function playReaction(category, counts) {
   const badlyRated = jokeWeight(counts) <= SAD_CLAP_WEIGHT_CUTOFF;
   if (badlyRated && Math.random() < 0.5) {
     playOneShot(SAD_CLAP_CLIP);
-  } else {
-    playOneShot(LAUGH_CLIPS[Math.floor(Math.random() * LAUGH_CLIPS.length)]);
+    return;
   }
+  if (category === "dad" && Math.random() < 0.75) {
+    playOneShot(DAD_REACTION_CLIPS[Math.floor(Math.random() * DAD_REACTION_CLIPS.length)]);
+    return;
+  }
+  playOneShot(LAUGH_CLIPS[Math.floor(Math.random() * LAUGH_CLIPS.length)]);
 }
 
 function playLaughter() {
@@ -450,7 +463,7 @@ async function playJokeSequence(myToken) {
     await playClipAsync(jokeClipUrl(currentCategory, currentIndex, "punchline"));
     if (myToken !== sessionToken) return;
 
-    playReaction(ratingsData[`${currentCategory}:${currentIndex}`]);
+    playReaction(currentCategory, ratingsData[`${currentCategory}:${currentIndex}`]);
     await runGapBar(GAP_MS);
     if (myToken !== sessionToken) return;
   }
