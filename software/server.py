@@ -40,7 +40,9 @@ DEFAULT_SETTINGS = {
     "disabled_categories": [],  # category ids hidden from the menu entirely
     "admin_pin": "0000",        # numeric PIN for the on-screen staff keypad
 }
-RECENT_MEMORY = 10  # jokes per category excluded from re-selection until they age out
+RECENT_MEMORY = 50  # jokes per category excluded from re-selection until they age out
+                    # (= the last 10 sessions at 5 jokes each; the frontend falls back
+                    # to the full pool if a category is too small to honor this)
 
 # root_path/instance_path are set explicitly because Flask's default
 # lookup calls os.getcwd(), which can fail under some sandboxed
