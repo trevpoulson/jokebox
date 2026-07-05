@@ -154,7 +154,34 @@ New picks (06–25) — leaning into genuine R-rated territory per your ask (a f
 
 ## Mixed Nuts (4th category)
 
-**Status: live, with its own dedicated voice.** 20 jokes, curated from the three lists above (7 Dad, 7 Family, 6 Adults Only). Originally built to cross-reference the other categories' existing audio (zero extra generation cost) — since replaced with a real 4th voice, **New York Jokester** (custom voice `oSE9yOhmDJmMWliYfK0L`, created by Trev in the ElevenLabs UI from a "Late Night Announcer" game-show-host voice description + audition script). All 40 clips (20 jokes × setup/punchline) generated fresh in this voice, fidelity-checked (37/40 faithful, 3 minor pacing quirks, no regenerations needed), and normalized. `jokes.json`'s mixed-category entries no longer carry `audio_category`/`audio_index` — they resolve to their own `static/audio/jokes/mixed/` files same as any other category.
+**Status: live, own voice, own jokes.** Originally a "greatest hits" sampler
+that reused jokes from the other three categories — replaced (2026-07-05,
+Trev's call: a joke should live in exactly one section) with 20 unique jokes
+drawn from the vetted backup pool above plus previously-unused entries from
+the same sourced lists. Sal's grab-bag spread: mostly clean groaners with a
+handful of cheeky/risqué ones at the end, all in the New York Jokester voice
+(`oSE9yOhmDJmMWliYfK0L`).
+
+01. Which days of the week are the strongest? → Saturday and Sunday. The rest are weekdays.
+02. I used to be addicted to soap. → But I'm clean now.
+03. Did you get a haircut? → No, I got them all cut.
+04. Why do you never see elephants hiding in trees? → Because they're really good at it.
+05. What's the best thing about Switzerland? → I don't know, but the flag is a big plus.
+06. Why couldn't the kid see the pirate movie? → Because it was rated Arrrgh.
+07. What do you call a cold puppy? → A chili dog.
+08. My friend claims he glued himself to his autobiography. → I don't believe him, but that's his story and he's sticking to it.
+09. Where do fish keep their money? → In the river bank.
+10. What do you call a sleeping bull? → A bulldozer.
+11. Why do hummingbirds hum? → Because they don't know the words.
+12. What kind of shoes do ninjas wear? → Sneakers.
+13. Why are balloons so expensive? → Inflation.
+14. What do you call a man with a shovel? → Doug.
+15. What kind of room has no doors? → A mushroom.
+16. Did you hear about the guy who dipped his balls in glitter? → Pretty nuts.
+17. How do you make a pool table laugh? → Tickle its balls.
+18. I just had sex in an elevator. → It was great on so many levels.
+19. They say make-up sex is the best. → Which is great, because all of my sex is made up.
+20. Why do walruses love Tupperware parties? → They're always on the lookout for a tight seal.
 
 ---
 
