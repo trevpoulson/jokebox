@@ -128,7 +128,7 @@ Already live (01–05, all previously vetted): nudist colony · bra & hat · whi
 New picks (06–25) — leaning into genuine R-rated territory per your ask (a few now use real profanity), while staying clear of anything above:
 
 06. Two men broke into a drugstore and stole all the Viagra. → Police are looking for two hardened criminals.
-07. My wife asked if I wanted to spoon in bed. → I said I'd rather fork.
+07. My husband asked if I wanted to spoon in bed. → I said I'd rather fork. *(flipped to Roxie's perspective 2026-07-05)*
 08. A woman walks into a bar and asks for a double entendre. → So he gave it to her.
 09. What's the difference between an oral thermometer and a rectal one? → The taste.
 10. What goes in hard and dry, and comes out wet and soft? → Chewing gum.
@@ -138,7 +138,7 @@ New picks (06–25) — leaning into genuine R-rated territory per your ask (a f
 14. What's the difference between a tire and 365 used condoms? → One's a Goodyear, the other's a great year.
 15. Why isn't there a pregnant Barbie doll? → Because Ken came in a different box.
 16. What do you call two jalapeños getting it on? → Extremely hot.
-17. I'll admit it, I have a tremendous sex drive. → My girlfriend lives forty miles away.
+17. I'll admit it, I have a tremendous sex drive. → My boyfriend lives forty miles away. *(flipped to Roxie's perspective 2026-07-05)*
 18. What's the best help for a constipated person? → Scare the shit out of them.
 19. What did the penis say to the condom? → Cover me, I'm going in.
 20. What did the toaster say to the slice of bread? → "I want you inside me."
