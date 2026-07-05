@@ -6,7 +6,13 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-rm -rf docs
+# macOS occasionally fails rm -rf on freshly-written trees (Spotlight
+# holding files); retry a couple of times before giving up
+for attempt in 1 2 3; do
+  rm -rf docs 2>/dev/null && break
+  sleep 1
+done
+[ -e docs ] && { echo "could not clear docs/"; exit 1; }
 mkdir -p docs/api
 
 # 1. static assets (audio, art, fonts, css, js)

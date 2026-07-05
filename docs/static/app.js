@@ -185,6 +185,9 @@ function unlockAudio() {
 function showScreen(name) {
   Object.values(screens).forEach((el) => el.classList.remove("active"));
   screens[name].classList.add("active");
+  // barkers only pitch on the idle screen — leaving it for any reason
+  // (coin in, category tap, sleep) fades an in-progress pitch out fast
+  if (name !== "idle") stopBarker();
   // the asleep screen should black out the whole window, letterbox included
   document.body.classList.toggle("asleep", name === "asleep");
   // report sleep state so pi_display.py can cut the physical backlight —
@@ -222,10 +225,50 @@ function playBuffer(buffer) {
   return src;
 }
 
-// fire-and-forget play of a cached one-shot clip (laughs, barker lines)
+// fire-and-forget play of a cached one-shot clip (laughs, sad clap)
 function playOneShot(url) {
   if (!audioCtx) return;
   loadClip(url).then((buffer) => playBuffer(buffer)).catch(() => {});
+}
+
+// Barker pitches get their own gain node so an in-progress line can be
+// faded out fast the moment someone drops a coin — nothing kills the
+// mood like being talked over by your own barker.
+let currentBarker = null; // {src, gain} of the pitch playing right now
+
+function playBarker(url) {
+  if (!audioCtx) return;
+  loadClip(url)
+    .then((buffer) => {
+      stopBarker(0); // never two pitches at once
+      if (audioCtx.state !== "running") audioCtx.resume();
+      const gain = audioCtx.createGain();
+      gain.connect(masterGain);
+      const src = audioCtx.createBufferSource();
+      src.buffer = buffer;
+      src.connect(gain);
+      src.start(0);
+      const handle = { src, gain };
+      currentBarker = handle;
+      src.onended = () => {
+        if (currentBarker === handle) currentBarker = null;
+      };
+    })
+    .catch(() => {});
+}
+
+function stopBarker(fadeMs = 200) {
+  if (!currentBarker) return;
+  const { src, gain } = currentBarker;
+  currentBarker = null;
+  try {
+    const now = audioCtx.currentTime;
+    gain.gain.setValueAtTime(gain.gain.value, now);
+    gain.gain.linearRampToValueAtTime(0, now + fadeMs / 1000);
+    src.stop(now + fadeMs / 1000 + 0.02);
+  } catch (e) {
+    try { src.stop(); } catch (e2) { /* already ended */ }
+  }
 }
 
 // Reaction after a punchline. Usually a randomly-picked laugh track, but a
@@ -470,7 +513,7 @@ function onMotionDetected() {
     const idleOrMenu = screens.idle.classList.contains("active") || screens.menu.classList.contains("active");
     if (idleOrMenu && Date.now() - lastBarkerAt > ATTRACT_COOLDOWN_MS) {
       lastBarkerAt = Date.now();
-      playOneShot(BARKER_CLIPS[Math.floor(Math.random() * BARKER_CLIPS.length)]);
+      playBarker(BARKER_CLIPS[Math.floor(Math.random() * BARKER_CLIPS.length)]);
     }
   }, ATTRACT_DELAY_MS);
 }
@@ -554,7 +597,7 @@ document.addEventListener("touchstart", unlockAudio, { passive: true });
 if (STATIC_DEMO) {
   setInterval(() => {
     if (screens.idle.classList.contains("active")) {
-      playOneShot(BARKER_CLIPS[Math.floor(Math.random() * BARKER_CLIPS.length)]);
+      playBarker(BARKER_CLIPS[Math.floor(Math.random() * BARKER_CLIPS.length)]);
     }
   }, DEMO_ATTRACT_INTERVAL_MS);
 }
