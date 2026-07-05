@@ -676,6 +676,19 @@ if (pinOverlay) {
 document.addEventListener("pointerdown", unlockAudio);
 document.addEventListener("touchstart", unlockAudio, { passive: true });
 
+// Safari can restore this page from its back-forward cache (e.g. after a
+// staff trip to /admin and back) with a dead AudioContext — jokes then
+// advance on schedule but play silently. A bfcache-restored page reloads
+// itself fresh so audio always starts from a working state.
+window.addEventListener("pageshow", (e) => {
+  if (e.persisted) window.location.reload();
+});
+// belt and braces: whenever the tab becomes visible again, nudge the
+// audio engine back awake
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) unlockAudio();
+});
+
 // (No JS scaling — the layout is fluid: the stylesheet ties the root
 // font-size to the viewport and sizes everything in rem, so the design
 // re-flows crisply at any screen size.)
