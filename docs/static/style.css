@@ -296,6 +296,9 @@ body.asleep #credit-counter { display: none; }
 .progress-fill {
   height: 100%;
   width: 0%;
+  /* match the track's inner curve (0.6rem outer radius - 0.2rem border)
+     so the fill doesn't poke square corners into the rounded ends */
+  border-radius: 0.4rem;
   background: repeating-linear-gradient(
     -45deg,
     var(--burnt) 0 1rem,
