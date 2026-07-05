@@ -23,6 +23,7 @@
     <div class="coin-badge" id="coin-badge">25¢</div>
     <div class="idle-prompt">Insert Quarter to Begin</div>
     <div class="idle-tagline">5 jokes · no refunds · laughter guaranteed*</div>
+    <button id="admin-key">✦ staff</button>
   </section>
 
   <!-- CATEGORY MENU -->
@@ -111,6 +112,28 @@
     <div class="done-title">Thanks!</div>
     <div class="done-sub">Insert another quarter for more</div>
   </section>
+
+  <!-- STAFF PIN PAD (opens the admin page; PIN checked server-side) -->
+  <div id="pin-overlay" class="hidden">
+    <div class="pin-card">
+      <div class="pin-title">★ STAFF ONLY ★</div>
+      <div class="pin-dots"><span></span><span></span><span></span><span></span></div>
+      <div class="pin-grid">
+        <button class="pin-btn" data-key="1">1</button>
+        <button class="pin-btn" data-key="2">2</button>
+        <button class="pin-btn" data-key="3">3</button>
+        <button class="pin-btn" data-key="4">4</button>
+        <button class="pin-btn" data-key="5">5</button>
+        <button class="pin-btn" data-key="6">6</button>
+        <button class="pin-btn" data-key="7">7</button>
+        <button class="pin-btn" data-key="8">8</button>
+        <button class="pin-btn" data-key="9">9</button>
+        <button class="pin-btn pin-btn-alt" data-key="clear">C</button>
+        <button class="pin-btn" data-key="0">0</button>
+        <button class="pin-btn pin-btn-alt" data-key="close">✕</button>
+      </div>
+    </div>
+  </div>
 
 </div>
 

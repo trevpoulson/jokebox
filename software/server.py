@@ -38,6 +38,7 @@ DEFAULT_SETTINGS = {
     "free_play": False,
     "disabled_jokes": [],       # "<category>:<index>" keys pulled from rotation
     "disabled_categories": [],  # category ids hidden from the menu entirely
+    "admin_pin": "0000",        # numeric PIN for the on-screen staff keypad
 }
 RECENT_MEMORY = 10  # jokes per category excluded from re-selection until they age out
 
@@ -198,6 +199,15 @@ def joke_played():
         del recent[:-RECENT_MEMORY]
         save_stats(stats)
     return jsonify({"ok": True})
+
+
+@app.route("/api/verify-pin", methods=["POST"])
+def verify_pin():
+    """The kiosk's on-screen staff keypad checks its entry here — the PIN
+    lives in settings.json (admin_pin), never in the frontend code."""
+    data = request.get_json(force=True, silent=True) or {}
+    ok = str(data.get("pin", "")) == str(load_settings().get("admin_pin", "0000"))
+    return jsonify({"ok": ok})
 
 
 @app.route("/api/screen-state", methods=["GET", "POST"])

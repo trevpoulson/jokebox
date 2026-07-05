@@ -348,6 +348,89 @@ body.asleep #credit-counter { display: none; }
 .rate-btn:disabled { cursor: default; }
 .rate-btn:disabled:not(.voted) { opacity: 0.35; }
 
+/* ---------- STAFF / PIN PAD ---------- */
+/* deliberately quiet — patrons should ignore it */
+#admin-key {
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+  font-family: 'Rye', serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  color: var(--ink);
+  background: none;
+  border: none;
+  opacity: 0.35;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+}
+#admin-key:active { opacity: 0.7; }
+
+#pin-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 70;
+  background: rgba(43, 27, 16, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#pin-overlay.hidden { display: none; }
+.pin-card {
+  background: var(--paper-hi);
+  border: 0.4rem solid var(--ink);
+  box-shadow: 0.6rem 0.6rem 0 rgba(43, 27, 16, 0.6);
+  padding: 2rem 2.6rem 2.4rem;
+  text-align: center;
+}
+.pin-title {
+  font-family: 'Rye', serif;
+  font-size: 1.7rem;
+  letter-spacing: 0.3rem;
+  color: var(--rust);
+  margin-bottom: 1.4rem;
+}
+.pin-dots {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-bottom: 1.6rem;
+}
+.pin-dots span {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 0.25rem solid var(--ink);
+  background: transparent;
+}
+.pin-dots span.filled { background: var(--ink); }
+.pin-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 5.8rem);
+  gap: 1rem;
+  justify-content: center;
+}
+.pin-btn {
+  width: 5.8rem;
+  height: 5.8rem;
+  border-radius: 50%;
+  border: 0.3rem solid var(--ink);
+  background: var(--paper);
+  font-family: 'Alfa Slab One', serif;
+  font-size: 2.2rem;
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: 0.25rem 0.25rem 0 rgba(43, 27, 16, 0.45);
+}
+.pin-btn:active { transform: scale(0.92); box-shadow: 0.1rem 0.1rem 0 rgba(43,27,16,0.45); }
+.pin-btn-alt { background: var(--mustard); font-size: 1.8rem; }
+@keyframes pin-shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-0.8rem); }
+  40%, 80% { transform: translateX(0.8rem); }
+}
+.pin-card.shake { animation: pin-shake 0.4s ease; }
+
 /* ---------- DONE ---------- */
 .done-title {
   font-family: 'Alfa Slab One', serif;

@@ -584,8 +584,11 @@ if (document.body.dataset.dev === "1") {
 // no-op once it's already running, but this is what lets a coin
 // insert later in the session (no gesture of its own) still play its
 // laugh, since the context was unlocked by an earlier real tap.
-document.addEventListener("click", () => {
+document.addEventListener("click", (e) => {
   unlockAudio();
+  // taps on the staff key or PIN pad are admin business — they shouldn't
+  // trigger free-play or fight the pad's own sleep handling
+  if (e.target.closest("#pin-overlay, #admin-key")) return;
   if (screens.idle.classList.contains("active")) {
     armSleepTimer();
     // free-play mode: no coin needed, tapping the idle screen opens the menu
@@ -595,6 +598,79 @@ document.addEventListener("click", () => {
     }
   }
 });
+
+// ---- staff PIN pad → admin page ----
+const pinOverlay = document.getElementById("pin-overlay");
+const adminKey = document.getElementById("admin-key");
+let pinEntry = "";
+
+function renderPinDots() {
+  document.querySelectorAll(".pin-dots span").forEach((d, i) => {
+    d.classList.toggle("filled", i < pinEntry.length);
+  });
+}
+
+function openPinPad() {
+  pinEntry = "";
+  renderPinDots();
+  pinOverlay.classList.remove("hidden");
+  clearTimeout(sleepTimer); // don't fall asleep mid-entry
+}
+
+function closePinPad() {
+  pinOverlay.classList.add("hidden");
+  if (screens.idle.classList.contains("active")) armSleepTimer();
+}
+
+async function submitPin() {
+  try {
+    const res = await fetch("api/verify-pin", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ pin: pinEntry }),
+    });
+    if ((await res.json()).ok) {
+      window.location.href = "admin";
+      return;
+    }
+  } catch (e) {
+    // server unreachable — treat like a wrong PIN
+  }
+  const card = pinOverlay.querySelector(".pin-card");
+  card.classList.add("shake");
+  setTimeout(() => {
+    card.classList.remove("shake");
+    pinEntry = "";
+    renderPinDots();
+  }, 450);
+}
+
+if (adminKey) {
+  if (STATIC_DEMO) {
+    adminKey.style.display = "none"; // no admin page exists in the demo
+  } else {
+    adminKey.addEventListener("click", openPinPad);
+  }
+}
+
+if (pinOverlay) {
+  pinOverlay.addEventListener("click", (e) => {
+    if (e.target === pinOverlay) { closePinPad(); return; } // tap the scrim to bail
+    const btn = e.target.closest(".pin-btn");
+    if (!btn) return;
+    const key = btn.dataset.key;
+    if (key === "close") {
+      closePinPad();
+    } else if (key === "clear") {
+      pinEntry = "";
+      renderPinDots();
+    } else if (pinEntry.length < 4) {
+      pinEntry += key;
+      renderPinDots();
+      if (pinEntry.length === 4) submitPin();
+    }
+  });
+}
 // pointerdown fires before click and on the touch itself — Safari is
 // happiest when the unlock happens inside the earliest gesture event
 document.addEventListener("pointerdown", unlockAudio);
