@@ -703,11 +703,15 @@ document.addEventListener("visibilitychange", () => {
 // Attract mode: while the idle screen is up, a barker makes the pitch
 // every `attract_interval` seconds (House Settings in /admin; default 10,
 // 0 turns it off). One loop serves both the kiosk and the standalone
-// demo. (Silent until the first tap unlocks browser audio.)
+// demo. Presence gating: on the real device the idle screen is itself
+// motion-gated (asleep until the PIR fires), so idle == someone's there;
+// in a browser, only bark while the tab is focused and visible — a
+// background tab shouldn't be pitching to nobody.
 setInterval(() => {
   const secs = Number(appSettings.attract_interval);
   if (!secs || secs <= 0) return;
   if (!screens.idle.classList.contains("active")) return;
+  if (document.hidden || !document.hasFocus()) return;
   if (Date.now() - lastBarkerAt < secs * 1000) return;
   lastBarkerAt = Date.now();
   playBarker(BARKER_CLIPS[Math.floor(Math.random() * BARKER_CLIPS.length)]);
@@ -721,13 +725,26 @@ loadJokes().then(() => {
   goIdle();
   connectEvents();
   // Splash: keep the logo up at least a beat (it IS the loading screen,
-  // but jokes.json loads fast on localhost) then fade to the idle screen.
+  // but jokes.json loads fast on localhost), then FLY the big splash logo
+  // down into the idle screen's logo — same image, so when the flight
+  // lands the two are pixel-identical and the swap is invisible.
   const splash = document.getElementById("splash");
   if (splash) {
     const minShowMs = 1200;
     setTimeout(() => {
-      splash.classList.add("hidden");
-      setTimeout(() => splash.remove(), 600); // gone after the fade
+      const img = splash.querySelector("img");
+      const target = document.getElementById("idle-logo");
+      if (img && target) {
+        img.style.animation = "none"; // stop the pulse mid-cycle for a clean flight
+        const a = img.getBoundingClientRect();
+        const b = target.getBoundingClientRect();
+        const dx = (b.left + b.width / 2) - (a.left + a.width / 2);
+        const dy = (b.top + b.height / 2) - (a.top + a.height / 2);
+        img.style.transition = "transform 0.65s cubic-bezier(0.4, 0, 0.2, 1)";
+        img.style.transform = `translate(${dx}px, ${dy}px) scale(${b.height / a.height})`;
+      }
+      splash.style.background = "transparent"; // idle screen shows through during the flight
+      setTimeout(() => splash.remove(), 700);
     }, Math.max(0, minShowMs - (Date.now() - bootedAt)));
   }
 });

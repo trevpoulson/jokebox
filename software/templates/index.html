@@ -22,9 +22,14 @@
 
   <!-- IDLE SCREEN -->
   <section id="screen-idle" class="screen active">
-    <img class="idle-logo" src="/static/img/logo.png" alt="Jokebox">
-    <div class="coin-badge" id="coin-badge">25¢</div>
-    <div class="idle-prompt">{% if free_play %}Tap to Begin — Free Play{% else %}Insert Quarter to Begin{% endif %}</div>
+    <img class="idle-logo" id="idle-logo" src="/static/img/logo.png" alt="Jokebox">
+    <div class="idle-prompt">
+      {%- if free_play -%}
+      Tap <span class="coin-badge" id="coin-badge">25¢</span> to Begin — Free Play
+      {%- else -%}
+      Insert <span class="coin-badge" id="coin-badge">25¢</span> to Begin
+      {%- endif -%}
+    </div>
     <div class="idle-tagline">5 jokes · no refunds · laughter guaranteed*</div>
     <button id="admin-key">✦ staff</button>
   </section>

@@ -159,20 +159,21 @@ body.asleep #credit-counter { display: none; }
     0.6rem 0.6rem 0 var(--ink);
   margin-bottom: 2.2rem;
 }
+/* the bouncing quarter now lives INLINE in the prompt text ("Insert ◉ to Begin") */
 .coin-badge {
-  width: 8.6rem;
-  height: 8.6rem;
+  width: 5.4rem;
+  height: 5.4rem;
   border-radius: 50%;
   background: var(--mustard);
-  border: 0.5rem solid var(--ink);
-  box-shadow: inset 0 0 0 0.5rem var(--paper-hi), 0.4rem 0.4rem 0 rgba(43,27,16,0.5);
-  display: flex;
+  border: 0.4rem solid var(--ink);
+  box-shadow: inset 0 0 0 0.35rem var(--paper-hi), 0.3rem 0.3rem 0 rgba(43,27,16,0.5);
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   font-family: 'Alfa Slab One', serif;
-  font-size: 2.8rem;
+  font-size: 1.7rem;
   color: var(--ink);
-  margin-bottom: 1.8rem;
   animation: bob 1.8s ease-in-out infinite;
   cursor: pointer; /* dev builds: tapping the coin inserts a quarter */
 }
@@ -182,7 +183,7 @@ body.asleep #credit-counter { display: none; }
 }
 @keyframes bob {
   0%, 100% { transform: translateY(0) rotate(-4deg); }
-  50% { transform: translateY(-1.2rem) rotate(4deg); }
+  50% { transform: translateY(-0.7rem) rotate(4deg); }
 }
 .idle-prompt {
   font-family: 'Rye', serif;
@@ -193,6 +194,9 @@ body.asleep #credit-counter { display: none; }
   padding: 1rem 2.6rem;
   background: var(--paper-hi);
   transform: rotate(-1deg);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
 }
 .idle-tagline {
   margin-top: 1.6rem;
@@ -451,9 +455,10 @@ body.asleep #credit-counter { display: none; }
 
 /* ---------- LOGO ---------- */
 .idle-logo {
-  height: min(21rem, 42vh);
+  /* the coin moved into the prompt line, so the logo gets the headroom */
+  height: min(30rem, 54vh);
   width: auto;
-  margin-bottom: 1.6rem;
+  margin-bottom: 2.2rem;
   filter: drop-shadow(0.35rem 0.35rem 0 rgba(43, 27, 16, 0.3));
 }
 .done-logo {
@@ -473,17 +478,18 @@ body.asleep #credit-counter { display: none; }
   justify-content: center;
   background: var(--paper);
   opacity: 1;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease, background 0.6s ease;
+  pointer-events: none; /* never block the coin/prompt underneath */
 }
 #splash img {
-  height: min(34rem, 60vh);
+  height: min(38rem, 68vh);
   width: auto;
   animation: splash-pulse 1.6s ease-in-out infinite;
   filter: drop-shadow(0.4rem 0.4rem 0 rgba(43, 27, 16, 0.3));
+  will-change: transform;
 }
 #splash.hidden {
   opacity: 0;
-  pointer-events: none;
 }
 @keyframes splash-pulse {
   0%, 100% { transform: scale(1); }
