@@ -458,8 +458,107 @@ handful of cheeky/risqué ones at the end, all in the New York Jokester voice
 
 ---
 
+
+### Expansion to 100 (2026-07-05 — Trev approved all 80, recorded)
+
+80 new jokes (21–100) for Sal, taking Mixed Nuts from 20 to 100. Sourced
+from verified classics only — Steven Wright's deadpan one-liners (fetched
+verbatim), borscht-belt / Rodney Dangerfield self-deprecation (NY energy,
+fits Sal), and widely-published pun/misdirection one-liners. NONE invented.
+
+Deduped by script against all 306 existing jokes: zero exact clashes, no
+internal dups. Conceptual near-dups caught and swapped during curation:
+- "look up my family tree/sap" → collided with Adults Only genealogist joke
+- "threw a boomerang/live in fear" → collided with Family boomerang-stick joke
+- "broke pencil/pointless" → collided with Family write-with-a-pencil joke
+- "addicted to hokey pokey" → same "I used to be addicted to X" template as
+  Mixed's existing soap joke (same category) → swapped for the Scrabble one
+Voice: New York Jokester (Sal), [playful] setup / [amused] punchline.
+
+21. I spilled spot remover on my dog. → Now he's gone.
+22. They say if at first you don't succeed, try again. → Unless you're skydiving.
+23. Everywhere is within walking distance... → if you have the time.
+24. It's a small world. → I wouldn't want to have to paint it.
+25. It bugs me that only one company makes the game Monopoly. → Kind of defeats the whole point.
+26. When I die, I'm leaving my body to science fiction. → Let them figure it out.
+27. Why don't they make the whole plane... → out of that little black box stuff?
+28. A clear conscience... → is usually the sign of a bad memory.
+29. I went into the general store. → They wouldn't let me buy anything specific.
+30. If Barbie is so popular... → why do you have to buy her friends?
+31. I bought some instant water. → I still don't know what to add.
+32. It doesn't matter what temperature a room is. → It's always room temperature.
+33. My buddy is an AM radio DJ. → When he walks under a bridge, you can't hear him.
+34. I installed a skylight in my apartment. → The people who live above me are furious.
+35. Curiosity killed the cat. → But for a while there, I was a suspect.
+36. I put instant coffee in the microwave. → I almost went back in time.
+37. What's the speed of dark? → Asking for a friend.
+38. I bought some batteries. → They weren't included.
+39. I had to stop driving my car for a while. → The tires got dizzy.
+40. I invented the cordless extension cord. → Nobody's called about it.
+41. On the other hand... → you have completely different fingers.
+42. Cross-country skiing is great... → if you live in a small country.
+43. What's another word for "thesaurus"? → I've been up nights over this.
+44. I saw a sign that said "24-Hour Banking." → I don't have that kind of time.
+45. My wife and I were happy for twenty years. → Then we met.
+46. I told my doctor I broke my leg in two places. → He told me to quit going to those places.
+47. My psychiatrist told me I was going crazy. → I said I wanted a second opinion. He said, "Fine — you're ugly, too."
+48. When I was born, the doctor took one look at me... → turned me over, and said, "Look — twins!"
+49. If it ever started raining soup... → I'd be the guy standing there holding a fork.
+50. A doctor gave a man six months to live. → He couldn't pay the bill, so the doctor gave him another six months.
+51. I've got all the money I'll ever need... → if I die by four o'clock.
+52. My grandfather has the heart of a lion. → And a lifetime ban from the zoo.
+53. I used to sell furniture for a living. → The trouble was, it was my own.
+54. My wife told me to stop impersonating a flamingo. → I had to put my foot down.
+55. The guy who invented knock-knock jokes... → should win the no-bell prize.
+56. I can't stand Russian nesting dolls. → They're so full of themselves.
+57. Will glass coffins ever catch on? → Remains to be seen.
+58. Adam and Eve were the first to ignore... → the Apple terms and conditions.
+59. My buddy's bakery burned down last night. → Now his business is toast.
+60. I've got a real fear of speed bumps. → But I'm slowly getting over it.
+61. I went to buy some camouflage pants. → Couldn't find any.
+62. Time flies like an arrow. → Fruit flies like a banana.
+63. I'm on a whiskey diet. → I've lost three days already.
+64. Where there's a will... → there's a relative.
+65. Dogs can't work an MRI machine. → But a cat scan.
+66. Two goldfish are in a tank. → One turns to the other and says, "You drive, I'll man the gun."
+67. I couldn't figure out why the baseball kept getting bigger. → Then it hit me.
+68. A book just fell on my head. → I've only got my shelf to blame.
+69. I childproofed the whole house. → The kids still get in.
+70. I'm terrified of elevators. → So I'm taking steps to avoid them.
+71. Refusing to go to the gym... → officially counts as resistance training.
+72. My email got hacked again. → That's the third time I've had to rename the cat.
+73. Singing in the shower is all fun and games... → until you get soap in your mouth. Then it's a soap opera.
+74. I bought the world's worst thesaurus. → Not only is it terrible — it's terrible.
+75. I got fired from the calendar factory. → Apparently you can't just take a couple days off.
+76. I stayed up all night wondering where the sun went. → Then it dawned on me.
+77. I named my dog "Five Miles." → Now I get to tell people I walk Five Miles every single day.
+78. I just got a job at a reflection factory. → I can really see myself working there.
+79. I used to be indecisive. → Now I'm not so sure.
+80. My therapist says I'm obsessed with revenge. → We'll see about that.
+81. I just burned two thousand calories. → That's the last time I nap while the brownies are in the oven.
+82. I've got a ton of jokes about unemployed people. → Sadly, none of them work.
+83. What did the janitor yell when he jumped out of the closet? → "Supplies!"
+84. I have an inferiority complex. → But it's not a very good one.
+85. People tell me I'm condescending. → That means I talk down to folks.
+86. Somebody stole my mood ring. → I'm honestly not sure how I feel about that.
+87. I asked the librarian for books about paranoia. → She leaned in and whispered, "They're right behind you."
+88. The rotation of the Earth... → really makes my day.
+89. I don't trust stairs. → They're always up to something.
+90. Whiteboards... → are remarkable.
+91. I told my computer I needed a break. → Now it won't stop sending me KitKats.
+92. I bought shoes off a guy in an alley. → I don't know what he laced them with, but I've been tripping all day.
+93. I quit my job at the helium factory. → I refuse to be spoken to in that tone.
+94. The first time I held a universal remote... → I thought, this changes everything.
+95. I'm not lazy. → I'm on energy-saving mode.
+96. Age is just a number. → In my case, an alarmingly high one.
+97. I've got a friend who's addicted to brake fluid. → He swears he can stop any time.
+98. Two windmills are standing in a field. One asks, "What kind of music are you into?" → The other says, "I'm a big metal fan."
+99. I owe a lot to the sidewalks in this town. → They've kept me off the streets.
+100. A guy spilled all his Scrabble tiles on the sidewalk. → I asked him, "So — what's the word on the street?"
+
+
 ## Status (2026-07-04)
 
-**Update 2026-07-05:** Dad Jokes expanded to 100 (see expansion section above) — app is now at **100**/**100**/**87**/20 (Family + Adults Only expanded 2026-07-05 too). Family Friendly, Adults Only, and Mixed Nuts expansions are next, in that order.
+**Update 2026-07-05:** Dad Jokes expanded to 100 (see expansion section above) — app is now at **100**/**100**/**87**/**100** (Family + Adults Only expanded 2026-07-05 too). Family Friendly, Adults Only, and Mixed Nuts expansions are next, in that order.
 
 Previous milestone (2026-07-04): all four categories live at 25/25/25/20 jokes (Dad/Family/Adults Only/Mixed Nuts). All 150 audio clips for the 3 main categories generated via ElevenLabs (`eleven_v3`), fidelity-checked (120 new clips: 109 faithful, 11 flagged for minor pacing/loudness quirks — none affecting comprehension, none regenerated), loudness-normalized to -16 LUFS, and verified non-corrupt. See `jokebox-joke-standards` memory for the content rules every joke here was checked against.
