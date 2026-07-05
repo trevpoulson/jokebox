@@ -340,6 +340,90 @@ New picks (06–25) — leaning into genuine R-rated territory per your ask (a f
 
 ---
 
+
+### Expansion to 87 (2026-07-05 — Trev approved all 62 incl. the 3 flagged)
+
+Curated from Humor Living's adult-jokes roundup + verified classics.
+Already cut at the source: anything involving minors (guitar teacher,
+PDF file, priest/pimple, nun/choir boy), anything derogatory toward
+women (PMS/terrorist, pregnant-woman/lightbulb, "two most important
+holes," fox-into-elephant, hundred-dollar-bill), lesbian-punchline
+jokes (minority-group rule), gross-out-only material, dark widow/death
+jokes, and pickup lines (not setup/punchline format). All remaining
+first-person lines read naturally from Roxie.
+
+Proposed 26–87 (62 new):
+
+26. What does being born in September tell you about your parents? → They started their year off with a bang.
+27. What do you call a man who cries while he pleasures himself? → A tearjerker.
+28. What's the difference between a job and marriage? → The job still sucks after ten years.
+29. What do you get when you mix birth control and LSD? → A trip without kids.
+30. When should you use a condom? → On every conceivable occasion.
+31. How is sex like a game of bridge? → If you have a great hand, you don't need a partner.
+32. Do you know what a 6.9 is? → Another good thing screwed up by a period.
+33. How is a push-up bra like a bag of chips? → You open it up and realize it's half empty.
+34. Why doesn't Santa Claus have any children? → He only comes once a year, and it's down your chimney.
+35. What do you call a cheap circumcision? → A rip-off. *(FLAG: echoes Dad's velcro "total rip-off" punchline — cut here or keep?)*
+36. What are the three shortest words in the English language? → "Is it in?"
+37. What do you get when you cross a penis with a potato? → A dick-tater.
+38. What did the egg say to the boiling water? → "Give me a second to get hard — I just got laid."
+39. What do you call a virgin lying on a waterbed? → A cherry float.
+40. What do you call a guy with a small one? → Justin. Just-in.
+41. Why do vegetarians give good head? → They're used to eating nuts.
+42. What's the difference between a pickpocket and a peeping Tom? → One snatches your watch, the other watches your snatch.
+43. What does the sign on an out-of-business brothel say? → "Beat it. We're closed."
+44. What's the difference between my boyfriend and a condom? → Condoms have evolved. They're not so thick and insensitive anymore.
+45. My neighbor's been mad at his wife for sunbathing nude. → Personally, I'm on the fence.
+46. What do you get when you jingle Santa's balls? → A white Christmas.
+47. What do you call a herd of cows pleasuring themselves? → Beef strokin' off.
+48. Why does a mermaid wear seashells? → She outgrew her B-shells.
+49. What do you call a nurse with dirty knees? → The head nurse.
+50. What's the difference between the flu and my legs? → I don't want to spread the flu.
+51. What's the difference between you and an egg? → An egg gets laid.
+52. What did one saggy boob say to the other? → "If we don't get some support, people will think we're nuts."
+53. If a genealogist looks up your family tree... → a gynecologist looks up your family bush.
+54. Why does masturbation lead to sex? → It's a gateway tug.
+55. Why don't witches wear underwear? → They need a better grip.
+56. What's Moby Dick's dad's name? → Papa Boner.
+57. What do a Rubik's Cube and a penis have in common? → The more you play with them, the harder they get.
+58. Welcome to the Sexual Innuendo Club. → Thank you all for coming.
+59. They say sex burns as many calories as running eight miles. → So how does he run eight miles in thirty seconds?
+60. What does the sperm bank receptionist say to donors on their way out? → "Thanks for coming."
+61. What's white and sticky and better to spit out than swallow? → Toothpaste.
+62. Why are men like diapers? → They're usually full of crap, but thankfully disposable.
+63. How is the military like a blow job? → The closer you get to discharge, the better you feel.
+64. What does a perverted frog say? → "Rub-bit."
+65. What kind of bees make milk? → Boo-bees.
+66. What's the difference between kinky and perverted? → Kinky is when you use a feather. Perverted is when you use the whole chicken.
+67. What did the elephant say to the naked man? → "Cute. But can you really breathe through that thing?"
+68. Why does it take millions of sperm to find one egg? → Because not a single one will stop and ask for directions.
+69. What's the difference between light and hard? → You can sleep with a light on.
+70. What's the speed limit of sex? → Sixty-eight. Because at sixty-nine, you have to turn around.
+71. What do you call the useless piece of skin attached to a penis? → The man.
+72. What did the O say to the Q? → "Dude, your junk is hanging out."
+73. A naked man broke into a church. → The police finally caught him by the organ.
+74. What do you call a smiling Roman soldier with hair stuck in his teeth? → A glad-he-ate-her.
+75. What are the three words you never want to hear during sex? → "Honey, I'm home."
+76. Why did the snowman smile? → He saw the snowblower coming.
+77. What did Adam say to Eve? → "Stand back — I don't know how big this thing gets."
+78. Why are penises the lightest things in the world? → Even a thought can lift one.
+79. Why did the woman leave her husband after he spent their savings on a penis enlargement? → She just couldn't take it any longer.
+80. What did the guy say when he got caught pleasuring himself to an optical illusion? → "It's not what it looks like!"
+81. What did the penis say to the vagina? → "Don't make me come in there."
+82. What's the difference between hungry and horny? → Where you stick the cucumber.
+83. What do the Starship Enterprise and toilet paper have in common? → They both circle Uranus, wiping out Klingons.
+84. Why do bunnies have gentle sex? → They have cotton balls.
+85. What did the banana say to the vibrator? → "Why are YOU shaking? She's the one about to eat ME."
+86. What did the hurricane say to the palm tree? → "Hold onto your nuts — this is no ordinary blow job." *(FLAG: cruder than Roxie's usual)*
+87. How can you tell if your husband is dead? → The sex is the same, but you get the remote. *(FLAG: darkest of the set — classic borscht-belt, but it's a dead-husband joke)*
+
+That's 87 total (25 live + 62 proposed) — short of 100 on purpose; the
+remaining candidates all failed the quality/content bar and Trev said
+under 100 is fine. Could top up from the next Mixed Nuts sourcing pass
+if strong cheeky material surfaces there.
+
+---
+
 ## Mixed Nuts (4th category)
 
 **Status: live, own voice, own jokes.** Originally a "greatest hits" sampler
@@ -375,6 +459,6 @@ handful of cheeky/risqué ones at the end, all in the New York Jokester voice
 
 ## Status (2026-07-04)
 
-**Update 2026-07-05:** Dad Jokes expanded to 100 (see expansion section above) — app is now at **100**/**100**/25/20 (Family expanded 2026-07-05 too). Family Friendly, Adults Only, and Mixed Nuts expansions are next, in that order.
+**Update 2026-07-05:** Dad Jokes expanded to 100 (see expansion section above) — app is now at **100**/**100**/**87**/20 (Family + Adults Only expanded 2026-07-05 too). Family Friendly, Adults Only, and Mixed Nuts expansions are next, in that order.
 
 Previous milestone (2026-07-04): all four categories live at 25/25/25/20 jokes (Dad/Family/Adults Only/Mixed Nuts). All 150 audio clips for the 3 main categories generated via ElevenLabs (`eleven_v3`), fidelity-checked (120 new clips: 109 faithful, 11 flagged for minor pacing/loudness quirks — none affecting comprehension, none regenerated), loudness-normalized to -16 LUFS, and verified non-corrupt. See `jokebox-joke-standards` memory for the content rules every joke here was checked against.
