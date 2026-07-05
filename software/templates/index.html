@@ -4,9 +4,13 @@
 <meta charset="UTF-8">
 <title>Joke Box</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+<link rel="apple-touch-icon" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body data-dev="{{ '1' if dev_mode else '0' }}">
+
+<div id="splash"><img src="/static/img/logo.png" alt="Jokebox"></div>
 
 <div id="screen">
 
@@ -18,8 +22,7 @@
 
   <!-- IDLE SCREEN -->
   <section id="screen-idle" class="screen active">
-    <div class="idle-topline">★ THE WORLD FAMOUS ★</div>
-    <div class="idle-title">JOKE BOX</div>
+    <img class="idle-logo" src="/static/img/logo.png" alt="Jokebox">
     <div class="coin-badge" id="coin-badge">25¢</div>
     <div class="idle-prompt">{% if free_play %}Tap to Begin — Free Play{% else %}Insert Quarter to Begin{% endif %}</div>
     <div class="idle-tagline">5 jokes · no refunds · laughter guaranteed*</div>
@@ -91,6 +94,7 @@
 
   <!-- THANKS / RESET -->
   <section id="screen-done" class="screen">
+    <img class="done-logo" src="/static/img/logo.png" alt="">
     <div class="done-title">Thanks!</div>
     <div class="done-sub">Insert another quarter for more</div>
   </section>

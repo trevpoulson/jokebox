@@ -715,8 +715,19 @@ setInterval(() => {
 
 initAudio(); // starts loading/decoding sfx clips immediately; doesn't need a gesture
 loadSessionContext(); // volume + free-play settings, applied as soon as they arrive
+const bootedAt = Date.now();
 loadJokes().then(() => {
   preloadJokeAudio();
   goIdle();
   connectEvents();
+  // Splash: keep the logo up at least a beat (it IS the loading screen,
+  // but jokes.json loads fast on localhost) then fade to the idle screen.
+  const splash = document.getElementById("splash");
+  if (splash) {
+    const minShowMs = 1200;
+    setTimeout(() => {
+      splash.classList.add("hidden");
+      setTimeout(() => splash.remove(), 600); // gone after the fade
+    }, Math.max(0, minShowMs - (Date.now() - bootedAt)));
+  }
 });

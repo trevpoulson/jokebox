@@ -448,3 +448,44 @@ body.asleep #credit-counter { display: none; }
   color: var(--ink);
   opacity: 0.85;
 }
+
+/* ---------- LOGO ---------- */
+.idle-logo {
+  height: min(21rem, 42vh);
+  width: auto;
+  margin-bottom: 1.6rem;
+  filter: drop-shadow(0.35rem 0.35rem 0 rgba(43, 27, 16, 0.3));
+}
+.done-logo {
+  height: min(12rem, 26vh);
+  width: auto;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0.25rem 0.25rem 0 rgba(43, 27, 16, 0.3));
+}
+
+/* ---------- SPLASH (shown from first paint until the app is ready) ---------- */
+#splash {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--paper);
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+#splash img {
+  height: min(34rem, 60vh);
+  width: auto;
+  animation: splash-pulse 1.6s ease-in-out infinite;
+  filter: drop-shadow(0.4rem 0.4rem 0 rgba(43, 27, 16, 0.3));
+}
+#splash.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+@keyframes splash-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
