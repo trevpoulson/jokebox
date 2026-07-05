@@ -214,15 +214,27 @@ body.asleep #credit-counter { display: none; }
   margin-bottom: 1.8rem;
   text-shadow: 0.2rem 0.2rem 0 var(--paper-hi), 0.4rem 0.4rem 0 rgba(181, 67, 46, 0.55);
 }
+/* Exactly TWO layouts, never a 3+1 wrap: squarish/tall windows get a
+   2×2 grid, wide windows get all four in a row. The card width is
+   solved so the whole menu (title + cards + labels) always fits inside
+   the viewport with breathing room top and bottom. */
 .menu-grid {
-  display: flex;
-  flex-wrap: wrap; /* narrow/portrait screens fall back to a 2×2 grid */
+  display: grid;
+  --card-w: min(17rem, calc((100vw - 10rem) / 2), 25vh); /* 2×2: two rows must fit */
+  grid-template-columns: repeat(2, var(--card-w));
+  grid-auto-rows: 1fr; /* both rows the same height even if one label wraps */
   gap: 1.6rem;
   justify-content: center;
 }
+@media (min-aspect-ratio: 3/2) {
+  .menu-grid {
+    --card-w: min(17rem, calc((100vw - 12rem) / 4), 52vh); /* row: one row must fit */
+    grid-template-columns: repeat(4, var(--card-w));
+  }
+}
 .category-btn {
   position: relative;
-  width: 17rem;
+  width: 100%; /* the grid track (var(--card-w)) sizes the card */
   padding: 0;
   border: 0.4rem solid var(--ink);
   background: var(--paper-hi);
@@ -246,6 +258,10 @@ body.asleep #credit-counter { display: none; }
   object-fit: cover;
   display: block;
   border-bottom: 0.4rem solid var(--ink);
+  /* the source art has a 1-2px light halo at its edges that reads as a
+     white seam against the dark card border — oversize the image a hair
+     so the halo clips outside the card (the button is overflow:hidden) */
+  transform: scale(1.02);
 }
 .cell-label {
   font-family: 'Rye', serif;
@@ -254,6 +270,9 @@ body.asleep #credit-counter { display: none; }
   color: var(--paper-hi);
   background: var(--ink);
   min-height: 3.8rem;
+  flex: 1; /* fill the card bottom — grid rows equalize card heights, and a
+              one-line label next to a wrapped two-liner must not leave a
+              pale gap under itself */
   display: flex;
   align-items: center;
   justify-content: center;
