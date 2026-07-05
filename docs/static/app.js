@@ -736,6 +736,9 @@ loadJokes().then(() => {
       const target = document.getElementById("idle-logo");
       if (img && target) {
         img.style.animation = "none"; // stop the pulse mid-cycle for a clean flight
+        // Only ONE logo on screen during the flight: the idle screen's own
+        // copy stays hidden until the splash copy lands on top of it.
+        target.style.visibility = "hidden";
         const a = img.getBoundingClientRect();
         const b = target.getBoundingClientRect();
         const dx = (b.left + b.width / 2) - (a.left + a.width / 2);
@@ -744,7 +747,10 @@ loadJokes().then(() => {
         img.style.transform = `translate(${dx}px, ${dy}px) scale(${b.height / a.height})`;
       }
       splash.style.background = "transparent"; // idle screen shows through during the flight
-      setTimeout(() => splash.remove(), 700);
+      setTimeout(() => {
+        if (target) target.style.visibility = ""; // swap: idle copy takes over...
+        splash.remove();                          // ...the instant the flyer vanishes
+      }, 700);
     }, Math.max(0, minShowMs - (Date.now() - bootedAt)));
   }
 });
