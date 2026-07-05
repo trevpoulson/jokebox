@@ -237,7 +237,11 @@ body.asleep #credit-counter { display: none; }
   width: 100%; /* the grid track (var(--card-w)) sizes the card */
   padding: 0;
   border: 0.4rem solid var(--ink);
-  background: var(--paper-hi);
+  /* ink background (not paper): the card is rotated, and a rotated box
+     with a border + overflow:hidden antialiases its border edge and its
+     clipped image edge separately — a light background bleeds through as
+     a thin seam. Matching the border color makes any bleed invisible. */
+  background: var(--ink);
   box-shadow: 0.5rem 0.5rem 0 rgba(43, 27, 16, 0.55);
   cursor: pointer;
   overflow: hidden;
