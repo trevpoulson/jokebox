@@ -461,7 +461,7 @@ handful of cheeky/risqué ones at the end, all in the New York Jokester voice
 
 ### Expansion to 100 (2026-07-05 — Trev approved all 80, recorded)
 
-**2026-07-06 fix:** replaced two padded one-liners that had no real punchline (Steven Wright rhetorical bits that don't fit setup/punchline): #37 "speed of dark / asking for a friend" → stepladder/real-ladder; #43 "another word for thesaurus / up nights" → two-antennas-married/reception. Both replacements have genuine pun punchlines; audio regenerated + fidelity-checked.
+**2026-07-06:** two one-liners had a FAKE padded punchline (#37 speed-of-dark → "asking for a friend"; #43 thesaurus → "up nights"). Per Trev, one-liners are fine WITHOUT a punchline — reframed as lead-in→line: #37 "I lie awake at night wondering... / what's the speed of dark?"; #43 "I've been thinking... / What's another word for thesaurus?". Audio regenerated, fidelity- + STT-verified.
 
 
 80 new jokes (21–100) for Sal, taking Mixed Nuts from 20 to 100. Sourced
