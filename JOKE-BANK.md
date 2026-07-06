@@ -461,6 +461,9 @@ handful of cheeky/risqué ones at the end, all in the New York Jokester voice
 
 ### Expansion to 100 (2026-07-05 — Trev approved all 80, recorded)
 
+**2026-07-06 fix:** replaced two padded one-liners that had no real punchline (Steven Wright rhetorical bits that don't fit setup/punchline): #37 "speed of dark / asking for a friend" → stepladder/real-ladder; #43 "another word for thesaurus / up nights" → two-antennas-married/reception. Both replacements have genuine pun punchlines; audio regenerated + fidelity-checked.
+
+
 80 new jokes (21–100) for Sal, taking Mixed Nuts from 20 to 100. Sourced
 from verified classics only — Steven Wright's deadpan one-liners (fetched
 verbatim), borscht-belt / Rodney Dangerfield self-deprecation (NY energy,
